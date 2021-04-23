@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>BillSplittr</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -38,7 +38,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="numPeopleLabel">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -74,7 +74,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="totalLabel">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -115,7 +115,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="listButton">
         <property name="maximumSize">
          <size>
           <width>200</width>
@@ -136,7 +136,7 @@
 }
 QPushButton:checked {
 	border: outset;
-	color: pink;
+	color: #ff9292;
 	border-width: 3px;
 	border-top: none;
 	border-right: none;
@@ -145,7 +145,7 @@ QPushButton:checked {
 }</string>
         </property>
         <property name="text">
-         <string>List</string>
+         <string>☰ List</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -156,7 +156,7 @@ QPushButton:checked {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="payerButton">
         <property name="maximumSize">
          <size>
           <width>200</width>
@@ -186,7 +186,7 @@ QPushButton:checked {
 }</string>
         </property>
         <property name="text">
-         <string>People</string>
+         <string>웃 Payer</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -215,12 +215,12 @@ QPushButton:checked {
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="createBillButton">
       <property name="styleSheet">
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>create bill</string>
+       <string>Create Bill</string>
       </property>
      </widget>
     </item>
