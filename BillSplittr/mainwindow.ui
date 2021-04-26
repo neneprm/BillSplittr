@@ -31,10 +31,16 @@
   <property name="windowTitle">
    <string>BillSplittr</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -46,7 +52,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;# of People&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#e85f99;&quot;&gt;# of People&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -62,7 +68,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600; color:#e85f99;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -82,7 +88,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Total&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#e85f99;&quot;&gt;Total&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -98,7 +104,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600; color:#e85f99;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -126,22 +132,23 @@
          <string notr="true">QPushButton {
 	font: 18px;
 	font-weight: bold;
+	color: #5e5e5e;
 	background: none;
 	border: outset;
 	border-width: 3px;
 	border-top: none;
 	border-right: none;
 	border-left: none;
-	border-bottom-color: gray;
+	border-bottom-color: #bbbbbb;
 }
 QPushButton:checked {
 	border: outset;
-	color: #ff9292;
+	color: #e85f99;
 	border-width: 3px;
 	border-top: none;
 	border-right: none;
 	border-left: none;
-	border-bottom-color: pink;
+	border-bottom-color: #f3bad6;
 }</string>
         </property>
         <property name="text">
@@ -151,8 +158,14 @@ QPushButton:checked {
          <bool>true</bool>
         </property>
         <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="autoRepeat">
          <bool>false</bool>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -167,22 +180,23 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	font: 18px;
 	font-weight: bold;
+	color: #5e5e5e;
 	background: none;
 	border: outset;
 	border-width: 3px;
 	border-top: none;
 	border-right: none;
 	border-left: none;
-	border-bottom-color: gray;
+	border-bottom-color: #bbbbbb;
 }
 QPushButton:checked {
 	border: outset;
-	color: pink;
+	color: #e85f99;
 	border-width: 3px;
 	border-top: none;
 	border-right: none;
 	border-left: none;
-	border-bottom-color: pink;
+	border-bottom-color: #f3bad6;
 }</string>
         </property>
         <property name="text">
@@ -194,6 +208,12 @@ QPushButton:checked {
         <property name="checked">
          <bool>false</bool>
         </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -206,6 +226,9 @@ QPushButton:checked {
         <height>400</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #fceef5;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -216,8 +239,22 @@ QPushButton:checked {
     </item>
     <item>
      <widget class="QPushButton" name="createBillButton">
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>40</height>
+       </size>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">QPushButton {
+	border: outset;
+	border-radius: 10px;
+	background-color: #f3bad6;
+}
+
+QPushButton:pressed{
+	background-color: #e85f99;
+}</string>
       </property>
       <property name="text">
        <string>Create Bill</string>
@@ -229,4 +266,7 @@ QPushButton:checked {
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
