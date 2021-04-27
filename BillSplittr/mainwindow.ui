@@ -34,6 +34,9 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background: rgb(236, 236, 236);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -43,8 +46,11 @@
       </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>-1</number>
+        </property>
         <item>
-         <widget class="QLabel" name="numPeopleLabel">
+         <widget class="QLabel" name="numPeople_label">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -52,7 +58,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#e85f99;&quot;&gt;# of People&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#0f4c75;&quot;&gt;# of People&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -60,7 +66,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="numPeople">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -68,7 +74,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600; color:#e85f99;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600; color:#0f4c75;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -79,8 +85,11 @@
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>-1</number>
+        </property>
         <item>
-         <widget class="QLabel" name="totalLabel">
+         <widget class="QLabel" name="total_label">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -88,7 +97,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#e85f99;&quot;&gt;Total&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#0f4c75;&quot;&gt;Total&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -96,7 +105,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="totalPrice">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -104,7 +113,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600; color:#e85f99;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600; color:#0f4c75;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -116,129 +125,372 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QPushButton" name="listButton">
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>70</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	font: 18px;
-	font-weight: bold;
-	color: #5e5e5e;
-	background: none;
-	border: outset;
-	border-width: 3px;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	border-bottom-color: #bbbbbb;
-}
-QPushButton:checked {
-	border: outset;
-	color: #e85f99;
-	border-width: 3px;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	border-bottom-color: #f3bad6;
-}</string>
-        </property>
-        <property name="text">
-         <string>☰ List</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-        <property name="autoRepeat">
-         <bool>false</bool>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="payerButton">
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>70</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	font: 18px;
-	font-weight: bold;
-	color: #5e5e5e;
-	background: none;
-	border: outset;
-	border-width: 3px;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	border-bottom-color: #bbbbbb;
-}
-QPushButton:checked {
-	border: outset;
-	color: #e85f99;
-	border-width: 3px;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	border-bottom-color: #f3bad6;
-}</string>
-        </property>
-        <property name="text">
-         <string>웃 Payer</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-        <property name="autoRepeat">
-         <bool>false</bool>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QFrame" name="frame">
+     <widget class="QTabWidget" name="tabWidget">
       <property name="maximumSize">
        <size>
         <width>400</width>
-        <height>400</height>
+        <height>430</height>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #fceef5;</string>
+       <string notr="true">QTabWidget QWidget
+{
+	background-color: #dae1e7;
+	border-radius: 10px;
+}
+
+QTabWidget::pane { 
+	border: none;
+	top:15px; 
+}
+
+QTabBar::tab {
+	width: 180px;
+	height: 40px;
+	padding: 5px;
+	font: 18px;
+	font-weight: bold;
+	color: #5e5e5e;
+	background: rgb(236, 236, 236);
+	border: outset;
+	border-radius: 1px;
+	border-width: 3px;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom-color: #bbbbbb;
+}
+
+QTabBar::tab:selected {
+	border: outset;
+	color: #0f4c75;
+	border-width: 3px;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom-color: #3282b8;
+}</string>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>☰ List</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="listName_label">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 16px;
+font: bold;
+color: #3282b8;</string>
+            </property>
+            <property name="text">
+             <string>List Name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="price_label">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 16px;
+font: bold;
+color: #3282b8;</string>
+            </property>
+            <property name="text">
+             <string>Price</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="perPerson_label">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 16px;
+font: bold;
+color: #3282b8;</string>
+            </property>
+            <property name="text">
+             <string>Per Person</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="list_scrollArea">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>336</width>
+             <height>200</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLineEdit" name="listInput">
+            <property name="maximumSize">
+             <size>
+              <width>250</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: white;
+border-radius: 4px;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="add_button">
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	font: 14px;
+	font: bold;
+	color: #dae1e7;
+	border: solid;
+	border-radius: 4px;
+	background-color: #3282b8;
+}
+
+QPushButton:pressed{
+	background-color: #0f4c75;
+}</string>
+            </property>
+            <property name="text">
+             <string>Add ⏎</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clearAllList_button">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	font: 16px;
+	font: bold;
+	text-align: left;
+	color: #3282b8;
+	border: none;
+	background: none;
+	background-color: transparent;
+}
+
+QPushButton:pressed{
+	color: #0f4c75;
+}</string>
+          </property>
+          <property name="text">
+           <string>Clear All List ⌫</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>웃 Payer</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="name_label">
+            <property name="maximumSize">
+             <size>
+              <width>250</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 16px;
+font: bold;
+color: #3282b8;</string>
+            </property>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="pay_label">
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 16px;
+font: bold;
+color: #3282b8;</string>
+            </property>
+            <property name="text">
+             <string>Pay</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="name_scrollArea">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>336</width>
+             <height>200</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLineEdit" name="nameInput">
+            <property name="maximumSize">
+             <size>
+              <width>250</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: none;
+border-radius: 4px;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="add_button_2">
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	font: 14px;
+	font: bold;
+	color: #dae1e7;
+	border: solid;
+	border-radius: 4px;
+	background-color: #3282b8;
+}
+
+QPushButton:pressed{
+	background-color: #0f4c75;
+}</string>
+            </property>
+            <property name="text">
+             <string>Add ⏎</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="claerAllName_button">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	font: 16px;
+	font: bold;
+	text-align: left;
+	color: #3282b8;
+	border: none;
+	background: none;
+	background-color: transparent;
+}
+
+QPushButton:pressed{
+	color: #0f4c75;
+}</string>
+          </property>
+          <property name="text">
+           <string>Clear All Name ⌫</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="createBillButton">
+     <widget class="QPushButton" name="createBill_button">
       <property name="maximumSize">
        <size>
         <width>400</width>
@@ -246,18 +498,21 @@ QPushButton:checked {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
+       <string notr="true">QPushButton {	
+	font: 14px;
+	font: bold;
+	color: #dae1e7; 
 	border: outset;
 	border-radius: 10px;
-	background-color: #f3bad6;
+	background-color: #3282b8;
 }
 
 QPushButton:pressed{
-	background-color: #e85f99;
+	background-color: #0f4c75;
 }</string>
       </property>
       <property name="text">
-       <string>Create Bill</string>
+       <string>Create Bill ⏎</string>
       </property>
      </widget>
     </item>
