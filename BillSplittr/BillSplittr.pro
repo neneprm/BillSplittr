@@ -10,22 +10,16 @@ CONFIG += c++11
 
 SOURCES += \
     listaddingdialog.cpp \
-    listwindow.cpp \
     main.cpp \
-    mainwindow.cpp \
-    peoplewindow.cpp
+    mainwindow.cpp
 
 HEADERS += \
     listaddingdialog.h \
-    listwindow.h \
-    mainwindow.h \
-    peoplewindow.h
+    mainwindow.h
 
 FORMS += \
     listaddingdialog.ui \
-    listwindow.ui \
-    mainwindow.ui \
-    peoplewindow.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
