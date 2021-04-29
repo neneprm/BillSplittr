@@ -1,9 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "payer.h"
 #include "listaddingdialog.h"
 #include <QMainWindow>
 #include <QLabel>
+#include <QGridLayout>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,5 +29,7 @@ private:
     Ui::MainWindow *ui;
     ListAddingDialog *listAddingDialog;
     QLabel *listNameInput_label;
+    QGridLayout *payerGridLayout;
+
 };
 #endif // MAINWINDOW_H

@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    payerGridLayout = new QGridLayout(ui->name_scrollAreaWidgetContents);
 }
 
 MainWindow::~MainWindow()
@@ -15,22 +16,22 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_nameAdd_button_clicked()
 {
-//   QVBoxLayout *vLay = new QVBoxLayout(ui->name_scrollAreaWidgetContents);
-//   QHBoxLayout *hLay = new QHBoxLayout(ui->name_scrollAreaWidgetContents);
-   if(ui->nameInput->text() != nullptr){
+   if(ui->nameInput->text() != nullptr)
+   {
+      // QHBoxLayout *payerRow = new QHBoxLayout(ui->name_scrollAreaWidgetContents);
+       Payer *payer = new Payer(ui->nameInput->text());
 
-   QLabel *name = new QLabel();
-   name->setText(ui->nameInput->text());
-   name->setAlignment(Qt::AlignLeft);
-   ui->nameInput->clear();
+       ui->nameInput->clear();
+       //add payer Label
+       payerGridLayout->addWidget(payer->nameLabel,numPayer,0,Qt::AlignLeft);
+       payerGridLayout->addWidget(payer->payLabel,numPayer,1,Qt::AlignRight);
 
-//   QLabel *pay = new QLabel();
-//   pay->setText("0");
-//   pay->setAlignment(Qt::AlignRight);
+       //ui->name_scrollAreaWidgetContents->layout()->addWidget(vLay);
+       //ui->name_scrollAreaWidgetContents->setLayout();
 
-   ui->name_scrollAreaWidgetContents->layout()->addWidget(name);
-   numPayer += 1;
-   ui->numPeople->setText(QString::number(numPayer));
+       //add num Payer
+       numPayer += 1;
+       ui->numPeople->setText(QString::number(numPayer));
 
 //   hLay->addWidget(name);
 //   hLay->addWidget(pay);
