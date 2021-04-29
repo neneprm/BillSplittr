@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QGridLayout>
+#include <QVector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,12 +25,17 @@ private slots:
 
     void on_listAdd_button_clicked();
 
+    void on_clearAllName_button_clicked();
+
 private:
     int numPayer{0};
     Ui::MainWindow *ui;
     ListAddingDialog *listAddingDialog;
     QLabel *listNameInput_label;
     QGridLayout *payerGridLayout;
+    QVector<Payer*>payerList;
+
+    void clearLayout(QLayout *layout);
 
 };
 #endif // MAINWINDOW_H

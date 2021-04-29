@@ -489,7 +489,7 @@ QPushButton:pressed{
          </layout>
         </item>
         <item>
-         <widget class="QPushButton" name="claerAllName_button">
+         <widget class="QPushButton" name="clearAllName_button">
           <property name="maximumSize">
            <size>
             <width>400</width>

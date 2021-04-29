@@ -59,7 +59,7 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QLineEdit *nameInput;
     QPushButton *nameAdd_button;
-    QPushButton *claerAllName_button;
+    QPushButton *clearAllName_button;
     QPushButton *createBill_button;
 
     void setupUi(QMainWindow *MainWindow)
@@ -360,10 +360,10 @@ public:
 
         verticalLayout_5->addLayout(horizontalLayout_9);
 
-        claerAllName_button = new QPushButton(payer_tab);
-        claerAllName_button->setObjectName(QString::fromUtf8("claerAllName_button"));
-        claerAllName_button->setMaximumSize(QSize(400, 20));
-        claerAllName_button->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        clearAllName_button = new QPushButton(payer_tab);
+        clearAllName_button->setObjectName(QString::fromUtf8("clearAllName_button"));
+        clearAllName_button->setMaximumSize(QSize(400, 20));
+        clearAllName_button->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 16px;\n"
 "	font: bold;\n"
 "	text-align: left;\n"
@@ -377,7 +377,7 @@ public:
 "	color: #0f4c75;\n"
 "}"));
 
-        verticalLayout_5->addWidget(claerAllName_button);
+        verticalLayout_5->addWidget(clearAllName_button);
 
         tabWidget->addTab(payer_tab, QString());
 
@@ -429,7 +429,7 @@ public:
         name_label->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
         pay_label->setText(QCoreApplication::translate("MainWindow", "Pay", nullptr));
         nameAdd_button->setText(QCoreApplication::translate("MainWindow", "Add \342\217\216", nullptr));
-        claerAllName_button->setText(QCoreApplication::translate("MainWindow", "Clear All Name \342\214\253", nullptr));
+        clearAllName_button->setText(QCoreApplication::translate("MainWindow", "Clear All Name \342\214\253", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(payer_tab), QCoreApplication::translate("MainWindow", "\354\233\203 Payer", nullptr));
         createBill_button->setText(QCoreApplication::translate("MainWindow", "Create Bill \342\217\216", nullptr));
     } // retranslateUi
