@@ -52,23 +52,19 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../BillSplittr/listaddingdialog.cpp \
-		../BillSplittr/listwindow.cpp \
+SOURCES       = ../BillSplittr/list.cpp \
+		../BillSplittr/listaddingdialog.cpp \
 		../BillSplittr/main.cpp \
 		../BillSplittr/mainwindow.cpp \
-		../BillSplittr/peoplewindow.cpp moc_listaddingdialog.cpp \
-		moc_listwindow.cpp \
-		moc_mainwindow.cpp \
-		moc_peoplewindow.cpp
-OBJECTS       = listaddingdialog.o \
-		listwindow.o \
+		../BillSplittr/payer.cpp moc_listaddingdialog.cpp \
+		moc_mainwindow.cpp
+OBJECTS       = list.o \
+		listaddingdialog.o \
 		main.o \
 		mainwindow.o \
-		peoplewindow.o \
+		payer.o \
 		moc_listaddingdialog.o \
-		moc_listwindow.o \
-		moc_mainwindow.o \
-		moc_peoplewindow.o
+		moc_mainwindow.o
 DIST          = /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/device_config.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/common/unix.conf \
@@ -181,14 +177,14 @@ DIST          = /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/exceptions.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/yacc.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/lex.prf \
-		../BillSplittr/BillSplittr.pro ../BillSplittr/listaddingdialog.h \
-		../BillSplittr/listwindow.h \
+		../BillSplittr/BillSplittr.pro ../BillSplittr/list.h \
+		../BillSplittr/listaddingdialog.h \
 		../BillSplittr/mainwindow.h \
-		../BillSplittr/peoplewindow.h ../BillSplittr/listaddingdialog.cpp \
-		../BillSplittr/listwindow.cpp \
+		../BillSplittr/payer.h ../BillSplittr/list.cpp \
+		../BillSplittr/listaddingdialog.cpp \
 		../BillSplittr/main.cpp \
 		../BillSplittr/mainwindow.cpp \
-		../BillSplittr/peoplewindow.cpp
+		../BillSplittr/payer.cpp
 QMAKE_TARGET  = BillSplittr
 DESTDIR       = 
 TARGET        = BillSplittr.app/Contents/MacOS/BillSplittr
@@ -208,7 +204,7 @@ include /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-BillSplittr.app/Contents/MacOS/BillSplittr: ui_listaddingdialog.h ui_listwindow.h ui_mainwindow.h ui_peoplewindow.h $(OBJECTS)  
+BillSplittr.app/Contents/MacOS/BillSplittr: ui_listaddingdialog.h ui_mainwindow.h $(OBJECTS)  
 	@test -d BillSplittr.app/Contents/MacOS/ || mkdir -p BillSplittr.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -475,9 +471,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../BillSplittr/listaddingdialog.h ../BillSplittr/listwindow.h ../BillSplittr/mainwindow.h ../BillSplittr/peoplewindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../BillSplittr/listaddingdialog.cpp ../BillSplittr/listwindow.cpp ../BillSplittr/main.cpp ../BillSplittr/mainwindow.cpp ../BillSplittr/peoplewindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../BillSplittr/listaddingdialog.ui ../BillSplittr/listwindow.ui ../BillSplittr/mainwindow.ui ../BillSplittr/peoplewindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../BillSplittr/list.h ../BillSplittr/listaddingdialog.h ../BillSplittr/mainwindow.h ../BillSplittr/payer.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../BillSplittr/list.cpp ../BillSplittr/listaddingdialog.cpp ../BillSplittr/main.cpp ../BillSplittr/mainwindow.cpp ../BillSplittr/payer.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../BillSplittr/listaddingdialog.ui ../BillSplittr/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -512,9 +508,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/data/dummy.cpp
 	/Library/Developer/CommandLineTools/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -Wall -Wextra -dM -E -o moc_predefs.h /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_listaddingdialog.cpp moc_listwindow.cpp moc_mainwindow.cpp moc_peoplewindow.cpp
+compiler_moc_header_make_all: moc_listaddingdialog.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_listaddingdialog.cpp moc_listwindow.cpp moc_mainwindow.cpp moc_peoplewindow.cpp
+	-$(DEL_FILE) moc_listaddingdialog.cpp moc_mainwindow.cpp
 moc_listaddingdialog.cpp: ../BillSplittr/listaddingdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -522,49 +518,32 @@ moc_listaddingdialog.cpp: ../BillSplittr/listaddingdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/bin/moc
 	/Users/neneprm/Qt/6.0.3/clang_64/bin/moc $(DEFINES) --include /Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/build-BillSplittr-Desktop_Qt_6_0_3_clang_64bit-Debug/moc_predefs.h -I/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/macx-clang -I/Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/BillSplittr -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtGui.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/neneprm/Qt/6.0.3/clang_64/lib ../BillSplittr/listaddingdialog.h -o moc_listaddingdialog.cpp
 
-moc_listwindow.cpp: ../BillSplittr/listwindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		moc_predefs.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/bin/moc
-	/Users/neneprm/Qt/6.0.3/clang_64/bin/moc $(DEFINES) --include /Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/build-BillSplittr-Desktop_Qt_6_0_3_clang_64bit-Debug/moc_predefs.h -I/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/macx-clang -I/Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/BillSplittr -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtGui.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/neneprm/Qt/6.0.3/clang_64/lib ../BillSplittr/listwindow.h -o moc_listwindow.cpp
-
 moc_mainwindow.cpp: ../BillSplittr/mainwindow.h \
+		../BillSplittr/listaddingdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		moc_predefs.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/bin/moc
 	/Users/neneprm/Qt/6.0.3/clang_64/bin/moc $(DEFINES) --include /Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/build-BillSplittr-Desktop_Qt_6_0_3_clang_64bit-Debug/moc_predefs.h -I/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/macx-clang -I/Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/BillSplittr -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtGui.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/neneprm/Qt/6.0.3/clang_64/lib ../BillSplittr/mainwindow.h -o moc_mainwindow.cpp
-
-moc_peoplewindow.cpp: ../BillSplittr/peoplewindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		moc_predefs.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/bin/moc
-	/Users/neneprm/Qt/6.0.3/clang_64/bin/moc $(DEFINES) --include /Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/build-BillSplittr-Desktop_Qt_6_0_3_clang_64bit-Debug/moc_predefs.h -I/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/macx-clang -I/Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/BillSplittr -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtGui.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/neneprm/Qt/6.0.3/clang_64/lib ../BillSplittr/peoplewindow.h -o moc_peoplewindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_listaddingdialog.h ui_listwindow.h ui_mainwindow.h ui_peoplewindow.h
+compiler_uic_make_all: ui_listaddingdialog.h ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_listaddingdialog.h ui_listwindow.h ui_mainwindow.h ui_peoplewindow.h
+	-$(DEL_FILE) ui_listaddingdialog.h ui_mainwindow.h
 ui_listaddingdialog.h: ../BillSplittr/listaddingdialog.ui \
 		/Users/neneprm/Qt/6.0.3/clang_64/bin/uic
 	/Users/neneprm/Qt/6.0.3/clang_64/bin/uic ../BillSplittr/listaddingdialog.ui -o ui_listaddingdialog.h
 
-ui_listwindow.h: ../BillSplittr/listwindow.ui \
-		/Users/neneprm/Qt/6.0.3/clang_64/bin/uic
-	/Users/neneprm/Qt/6.0.3/clang_64/bin/uic ../BillSplittr/listwindow.ui -o ui_listwindow.h
-
 ui_mainwindow.h: ../BillSplittr/mainwindow.ui \
 		/Users/neneprm/Qt/6.0.3/clang_64/bin/uic
 	/Users/neneprm/Qt/6.0.3/clang_64/bin/uic ../BillSplittr/mainwindow.ui -o ui_mainwindow.h
-
-ui_peoplewindow.h: ../BillSplittr/peoplewindow.ui \
-		/Users/neneprm/Qt/6.0.3/clang_64/bin/uic
-	/Users/neneprm/Qt/6.0.3/clang_64/bin/uic ../BillSplittr/peoplewindow.ui -o ui_peoplewindow.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -578,50 +557,51 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+list.o: ../BillSplittr/list.cpp ../BillSplittr/list.h \
+		../BillSplittr/payer.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o list.o ../BillSplittr/list.cpp
+
 listaddingdialog.o: ../BillSplittr/listaddingdialog.cpp ../BillSplittr/listaddingdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_listaddingdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listaddingdialog.o ../BillSplittr/listaddingdialog.cpp
 
-listwindow.o: ../BillSplittr/listwindow.cpp ../BillSplittr/listwindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		ui_listwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listwindow.o ../BillSplittr/listwindow.cpp
-
 main.o: ../BillSplittr/main.cpp ../BillSplittr/mainwindow.h \
+		../BillSplittr/listaddingdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../BillSplittr/main.cpp
 
 mainwindow.o: ../BillSplittr/mainwindow.cpp ../BillSplittr/mainwindow.h \
+		../BillSplittr/listaddingdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QDebug \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qdebug.h
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../BillSplittr/mainwindow.cpp
 
-peoplewindow.o: ../BillSplittr/peoplewindow.cpp ../BillSplittr/peoplewindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		ui_peoplewindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o peoplewindow.o ../BillSplittr/peoplewindow.cpp
+payer.o: ../BillSplittr/payer.cpp ../BillSplittr/payer.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o payer.o ../BillSplittr/payer.cpp
 
 moc_listaddingdialog.o: moc_listaddingdialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_listaddingdialog.o moc_listaddingdialog.cpp
 
-moc_listwindow.o: moc_listwindow.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_listwindow.o moc_listwindow.cpp
-
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
-
-moc_peoplewindow.o: moc_peoplewindow.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_peoplewindow.o moc_peoplewindow.cpp
 
 ####### Install
 
