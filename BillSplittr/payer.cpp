@@ -14,7 +14,6 @@ void Payer::amountPerPerson(int calcPrice)
 {
     pay_amount += calcPrice;
     payLabel->setText(QString::number(pay_amount));
-
 }
 
 QString Payer::getName()
