@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -57,7 +56,6 @@ public:
     QLabel *pay_label;
     QScrollArea *name_scrollArea;
     QWidget *name_scrollAreaWidgetContents;
-    QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_9;
     QLineEdit *nameInput;
     QPushButton *nameAdd_button;
@@ -100,6 +98,9 @@ public:
         numPeople = new QLabel(centralwidget);
         numPeople->setObjectName(QString::fromUtf8("numPeople"));
         numPeople->setMaximumSize(QSize(16777215, 50));
+        numPeople->setStyleSheet(QString::fromUtf8("font: 36px;\n"
+"font: bold;\n"
+"color: #0f4c75;"));
         numPeople->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(numPeople);
@@ -122,6 +123,9 @@ public:
         totalPrice = new QLabel(centralwidget);
         totalPrice->setObjectName(QString::fromUtf8("totalPrice"));
         totalPrice->setMaximumSize(QSize(16777215, 50));
+        totalPrice->setStyleSheet(QString::fromUtf8("font: 36px;\n"
+"font: bold;\n"
+"color: #0f4c75;"));
         totalPrice->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(totalPrice);
@@ -311,13 +315,13 @@ public:
         name_scrollArea->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font-weight: bold;\n"
 "color: #0f4c75;;"));
+        name_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        name_scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         name_scrollArea->setWidgetResizable(true);
         name_scrollArea->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         name_scrollAreaWidgetContents = new QWidget();
         name_scrollAreaWidgetContents->setObjectName(QString::fromUtf8("name_scrollAreaWidgetContents"));
         name_scrollAreaWidgetContents->setGeometry(QRect(0, 0, 336, 200));
-        gridLayout = new QGridLayout(name_scrollAreaWidgetContents);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         name_scrollArea->setWidget(name_scrollAreaWidgetContents);
 
         verticalLayout_5->addWidget(name_scrollArea);
