@@ -175,9 +175,9 @@ QTabBar::tab:selected {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="list_tab">
        <attribute name="title">
         <string>☰ List</string>
        </attribute>
@@ -254,7 +254,7 @@ color: #3282b8;</string>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
-          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <widget class="QWidget" name="list_scrollAreaWidgetContents">
            <property name="geometry">
             <rect>
              <x>0</x>
@@ -263,6 +263,7 @@ color: #3282b8;</string>
              <height>200</height>
             </rect>
            </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7"/>
           </widget>
          </widget>
         </item>
@@ -278,12 +279,15 @@ color: #3282b8;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">background: white;
-border-radius: 4px;</string>
+border-radius: 4px;
+color: #0f4c75;
+font: 14px;
+font: bold;</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="add_button">
+           <widget class="QPushButton" name="listAdd_button">
             <property name="maximumSize">
              <size>
               <width>150</width>
@@ -341,7 +345,7 @@ QPushButton:pressed{
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_4">
+      <widget class="QWidget" name="payer_tab">
        <attribute name="title">
         <string>웃 Payer</string>
        </attribute>
@@ -383,7 +387,7 @@ color: #3282b8;</string>
              <string>Pay</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -397,10 +401,18 @@ color: #3282b8;</string>
             <height>200</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">font: 16px;
+font-weight: bold;
+color: #0f4c75;;</string>
+          </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
-          <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+          <widget class="QWidget" name="name_scrollAreaWidgetContents">
            <property name="geometry">
             <rect>
              <x>0</x>
@@ -409,6 +421,7 @@ color: #3282b8;</string>
              <height>200</height>
             </rect>
            </property>
+           <layout class="QGridLayout" name="gridLayout"/>
           </widget>
          </widget>
         </item>
@@ -423,13 +436,16 @@ color: #3282b8;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: none;
-border-radius: 4px;</string>
+             <string notr="true">background-color: white;
+border-radius: 4px;
+color: #0f4c75;
+font: 14px;
+font: bold;</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="add_button_2">
+           <widget class="QPushButton" name="nameAdd_button">
             <property name="maximumSize">
              <size>
               <width>150</width>
@@ -520,8 +536,38 @@ QPushButton:pressed{
   </widget>
  </widget>
  <resources/>
- <connections/>
- <buttongroups>
-  <buttongroup name="buttonGroup"/>
- </buttongroups>
+ <connections>
+  <connection>
+   <sender>nameInput</sender>
+   <signal>returnPressed()</signal>
+   <receiver>nameAdd_button</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listInput</sender>
+   <signal>returnPressed()</signal>
+   <receiver>listAdd_button</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>476</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

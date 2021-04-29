@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -37,31 +37,32 @@ public:
     QLabel *total_label;
     QLabel *totalPrice;
     QTabWidget *tabWidget;
-    QWidget *tab_3;
+    QWidget *list_tab;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_4;
     QLabel *listName_label;
     QLabel *price_label;
     QLabel *perPerson_label;
     QScrollArea *list_scrollArea;
-    QWidget *scrollAreaWidgetContents_2;
+    QWidget *list_scrollAreaWidgetContents;
+    QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *listInput;
-    QPushButton *add_button;
+    QPushButton *listAdd_button;
     QPushButton *clearAllList_button;
-    QWidget *tab_4;
+    QWidget *payer_tab;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_8;
     QLabel *name_label;
     QLabel *pay_label;
     QScrollArea *name_scrollArea;
-    QWidget *scrollAreaWidgetContents;
+    QWidget *name_scrollAreaWidgetContents;
+    QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_9;
     QLineEdit *nameInput;
-    QPushButton *add_button_2;
+    QPushButton *nameAdd_button;
     QPushButton *claerAllName_button;
     QPushButton *createBill_button;
-    QButtonGroup *buttonGroup;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -172,13 +173,13 @@ public:
 "	border-bottom-color: #3282b8;\n"
 "}"));
         tabWidget->setTabShape(QTabWidget::Rounded);
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QString::fromUtf8("tab_3"));
-        verticalLayout_3 = new QVBoxLayout(tab_3);
+        list_tab = new QWidget();
+        list_tab->setObjectName(QString::fromUtf8("list_tab"));
+        verticalLayout_3 = new QVBoxLayout(list_tab);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        listName_label = new QLabel(tab_3);
+        listName_label = new QLabel(list_tab);
         listName_label->setObjectName(QString::fromUtf8("listName_label"));
         listName_label->setMaximumSize(QSize(200, 100));
         listName_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
@@ -187,7 +188,7 @@ public:
 
         horizontalLayout_4->addWidget(listName_label);
 
-        price_label = new QLabel(tab_3);
+        price_label = new QLabel(list_tab);
         price_label->setObjectName(QString::fromUtf8("price_label"));
         price_label->setMaximumSize(QSize(100, 100));
         price_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
@@ -196,7 +197,7 @@ public:
 
         horizontalLayout_4->addWidget(price_label);
 
-        perPerson_label = new QLabel(tab_3);
+        perPerson_label = new QLabel(list_tab);
         perPerson_label->setObjectName(QString::fromUtf8("perPerson_label"));
         perPerson_label->setMaximumSize(QSize(100, 100));
         perPerson_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
@@ -209,31 +210,36 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_4);
 
-        list_scrollArea = new QScrollArea(tab_3);
+        list_scrollArea = new QScrollArea(list_tab);
         list_scrollArea->setObjectName(QString::fromUtf8("list_scrollArea"));
         list_scrollArea->setMaximumSize(QSize(400, 200));
         list_scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents_2 = new QWidget();
-        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 336, 200));
-        list_scrollArea->setWidget(scrollAreaWidgetContents_2);
+        list_scrollAreaWidgetContents = new QWidget();
+        list_scrollAreaWidgetContents->setObjectName(QString::fromUtf8("list_scrollAreaWidgetContents"));
+        list_scrollAreaWidgetContents->setGeometry(QRect(0, 0, 336, 200));
+        verticalLayout_7 = new QVBoxLayout(list_scrollAreaWidgetContents);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        list_scrollArea->setWidget(list_scrollAreaWidgetContents);
 
         verticalLayout_3->addWidget(list_scrollArea);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        listInput = new QLineEdit(tab_3);
+        listInput = new QLineEdit(list_tab);
         listInput->setObjectName(QString::fromUtf8("listInput"));
         listInput->setMaximumSize(QSize(250, 30));
-        listInput->setStyleSheet(QString::fromUtf8("background-color: none;\n"
-"border-radius: 4px;"));
+        listInput->setStyleSheet(QString::fromUtf8("background: white;\n"
+"border-radius: 4px;\n"
+"color: #0f4c75;\n"
+"font: 14px;\n"
+"font: bold;"));
 
         horizontalLayout_3->addWidget(listInput);
 
-        add_button = new QPushButton(tab_3);
-        add_button->setObjectName(QString::fromUtf8("add_button"));
-        add_button->setMaximumSize(QSize(150, 30));
-        add_button->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        listAdd_button = new QPushButton(list_tab);
+        listAdd_button->setObjectName(QString::fromUtf8("listAdd_button"));
+        listAdd_button->setMaximumSize(QSize(150, 30));
+        listAdd_button->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 14px;\n"
 "	font: bold;\n"
 "	color: #dae1e7;\n"
@@ -246,12 +252,12 @@ public:
 "	background-color: #0f4c75;\n"
 "}"));
 
-        horizontalLayout_3->addWidget(add_button);
+        horizontalLayout_3->addWidget(listAdd_button);
 
 
         verticalLayout_3->addLayout(horizontalLayout_3);
 
-        clearAllList_button = new QPushButton(tab_3);
+        clearAllList_button = new QPushButton(list_tab);
         clearAllList_button->setObjectName(QString::fromUtf8("clearAllList_button"));
         clearAllList_button->setMaximumSize(QSize(400, 20));
         clearAllList_button->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -270,14 +276,14 @@ public:
 
         verticalLayout_3->addWidget(clearAllList_button);
 
-        tabWidget->addTab(tab_3, QString());
-        tab_4 = new QWidget();
-        tab_4->setObjectName(QString::fromUtf8("tab_4"));
-        verticalLayout_5 = new QVBoxLayout(tab_4);
+        tabWidget->addTab(list_tab, QString());
+        payer_tab = new QWidget();
+        payer_tab->setObjectName(QString::fromUtf8("payer_tab"));
+        verticalLayout_5 = new QVBoxLayout(payer_tab);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        name_label = new QLabel(tab_4);
+        name_label = new QLabel(payer_tab);
         name_label->setObjectName(QString::fromUtf8("name_label"));
         name_label->setMaximumSize(QSize(250, 100));
         name_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
@@ -286,44 +292,53 @@ public:
 
         horizontalLayout_8->addWidget(name_label);
 
-        pay_label = new QLabel(tab_4);
+        pay_label = new QLabel(payer_tab);
         pay_label->setObjectName(QString::fromUtf8("pay_label"));
         pay_label->setMaximumSize(QSize(150, 100));
         pay_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font: bold;\n"
 "color: #3282b8;"));
-        pay_label->setAlignment(Qt::AlignCenter);
+        pay_label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_8->addWidget(pay_label);
 
 
         verticalLayout_5->addLayout(horizontalLayout_8);
 
-        name_scrollArea = new QScrollArea(tab_4);
+        name_scrollArea = new QScrollArea(payer_tab);
         name_scrollArea->setObjectName(QString::fromUtf8("name_scrollArea"));
         name_scrollArea->setMaximumSize(QSize(400, 200));
+        name_scrollArea->setStyleSheet(QString::fromUtf8("font: 16px;\n"
+"font-weight: bold;\n"
+"color: #0f4c75;;"));
         name_scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 336, 200));
-        name_scrollArea->setWidget(scrollAreaWidgetContents);
+        name_scrollArea->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        name_scrollAreaWidgetContents = new QWidget();
+        name_scrollAreaWidgetContents->setObjectName(QString::fromUtf8("name_scrollAreaWidgetContents"));
+        name_scrollAreaWidgetContents->setGeometry(QRect(0, 0, 336, 200));
+        gridLayout = new QGridLayout(name_scrollAreaWidgetContents);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        name_scrollArea->setWidget(name_scrollAreaWidgetContents);
 
         verticalLayout_5->addWidget(name_scrollArea);
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
-        nameInput = new QLineEdit(tab_4);
+        nameInput = new QLineEdit(payer_tab);
         nameInput->setObjectName(QString::fromUtf8("nameInput"));
         nameInput->setMaximumSize(QSize(250, 30));
-        nameInput->setStyleSheet(QString::fromUtf8("background-color: none;\n"
-"border-radius: 4px;"));
+        nameInput->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+"border-radius: 4px;\n"
+"color: #0f4c75;\n"
+"font: 14px;\n"
+"font: bold;"));
 
         horizontalLayout_9->addWidget(nameInput);
 
-        add_button_2 = new QPushButton(tab_4);
-        add_button_2->setObjectName(QString::fromUtf8("add_button_2"));
-        add_button_2->setMaximumSize(QSize(150, 30));
-        add_button_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        nameAdd_button = new QPushButton(payer_tab);
+        nameAdd_button->setObjectName(QString::fromUtf8("nameAdd_button"));
+        nameAdd_button->setMaximumSize(QSize(150, 30));
+        nameAdd_button->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 14px;\n"
 "	font: bold;\n"
 "	color: #dae1e7;\n"
@@ -336,12 +351,12 @@ public:
 "	background-color: #0f4c75;\n"
 "}"));
 
-        horizontalLayout_9->addWidget(add_button_2);
+        horizontalLayout_9->addWidget(nameAdd_button);
 
 
         verticalLayout_5->addLayout(horizontalLayout_9);
 
-        claerAllName_button = new QPushButton(tab_4);
+        claerAllName_button = new QPushButton(payer_tab);
         claerAllName_button->setObjectName(QString::fromUtf8("claerAllName_button"));
         claerAllName_button->setMaximumSize(QSize(400, 20));
         claerAllName_button->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -360,7 +375,7 @@ public:
 
         verticalLayout_5->addWidget(claerAllName_button);
 
-        tabWidget->addTab(tab_4, QString());
+        tabWidget->addTab(payer_tab, QString());
 
         verticalLayout->addWidget(tabWidget);
 
@@ -385,8 +400,10 @@ public:
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
+        QObject::connect(nameInput, &QLineEdit::returnPressed, nameAdd_button, qOverload<>(&QPushButton::animateClick));
+        QObject::connect(listInput, &QLineEdit::returnPressed, listAdd_button, qOverload<>(&QPushButton::animateClick));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -402,14 +419,14 @@ public:
         listName_label->setText(QCoreApplication::translate("MainWindow", "List Name", nullptr));
         price_label->setText(QCoreApplication::translate("MainWindow", "Price", nullptr));
         perPerson_label->setText(QCoreApplication::translate("MainWindow", "Per Person", nullptr));
-        add_button->setText(QCoreApplication::translate("MainWindow", "Add \342\217\216", nullptr));
+        listAdd_button->setText(QCoreApplication::translate("MainWindow", "Add \342\217\216", nullptr));
         clearAllList_button->setText(QCoreApplication::translate("MainWindow", "Clear All List \342\214\253", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "\342\230\260 List", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(list_tab), QCoreApplication::translate("MainWindow", "\342\230\260 List", nullptr));
         name_label->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
         pay_label->setText(QCoreApplication::translate("MainWindow", "Pay", nullptr));
-        add_button_2->setText(QCoreApplication::translate("MainWindow", "Add \342\217\216", nullptr));
+        nameAdd_button->setText(QCoreApplication::translate("MainWindow", "Add \342\217\216", nullptr));
         claerAllName_button->setText(QCoreApplication::translate("MainWindow", "Clear All Name \342\214\253", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "\354\233\203 Payer", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(payer_tab), QCoreApplication::translate("MainWindow", "\354\233\203 Payer", nullptr));
         createBill_button->setText(QCoreApplication::translate("MainWindow", "Create Bill \342\217\216", nullptr));
     } // retranslateUi
 
