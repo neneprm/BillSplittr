@@ -27,7 +27,7 @@ class Ui_ListAddingDialog
 public:
     QVBoxLayout *verticalLayout;
     QLabel *list_label;
-    QLabel *listName_label;
+    QLabel *listNameInput_label;
     QLineEdit *priceInput;
     QScrollArea *nameList_scrollArea;
     QWidget *scrollAreaWidgetContents;
@@ -59,7 +59,7 @@ public:
         ListAddingDialog->resize(400, 600);
         ListAddingDialog->setMinimumSize(QSize(400, 600));
         ListAddingDialog->setMaximumSize(QSize(400, 600));
-        ListAddingDialog->setStyleSheet(QString::fromUtf8("background-color: none;"));
+        ListAddingDialog->setStyleSheet(QString::fromUtf8("background: rgb(236, 236, 236);"));
         verticalLayout = new QVBoxLayout(ListAddingDialog);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         list_label = new QLabel(ListAddingDialog);
@@ -72,15 +72,15 @@ public:
 
         verticalLayout->addWidget(list_label);
 
-        listName_label = new QLabel(ListAddingDialog);
-        listName_label->setObjectName(QString::fromUtf8("listName_label"));
-        listName_label->setMaximumSize(QSize(400, 40));
-        listName_label->setStyleSheet(QString::fromUtf8("font: 18px;\n"
+        listNameInput_label = new QLabel(ListAddingDialog);
+        listNameInput_label->setObjectName(QString::fromUtf8("listNameInput_label"));
+        listNameInput_label->setMaximumSize(QSize(400, 40));
+        listNameInput_label->setStyleSheet(QString::fromUtf8("font: 18px;\n"
 "font: bold;\n"
 "color: #0f4c75;"));
-        listName_label->setAlignment(Qt::AlignCenter);
+        listNameInput_label->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(listName_label);
+        verticalLayout->addWidget(listNameInput_label);
 
         priceInput = new QLineEdit(ListAddingDialog);
         priceInput->setObjectName(QString::fromUtf8("priceInput"));
@@ -112,7 +112,7 @@ public:
 "	font: bold;\n"
 "	color: #3282b8;\n"
 "	border: solid;\n"
-"	border-radius: 4px;\n"
+"	border-radius: 10px;\n"
 "	border-color: #3282b8;\n"
 "	border-width: 2px;\n"
 "}\n"
@@ -135,7 +135,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -152,7 +153,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -169,7 +171,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -187,6 +190,7 @@ public:
 "	font: bold;\n"
 "	color: #3282b8;\n"
 "	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #dae1e7;\n"
 "}\n"
 "\n"
@@ -203,7 +207,9 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
+"	border-left: none;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -220,7 +226,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -238,6 +245,7 @@ public:
 "	font: bold;\n"
 "	color: #3282b8;\n"
 "	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #dae1e7;\n"
 "}\n"
 "\n"
@@ -254,7 +262,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -272,6 +281,7 @@ public:
 "	font: bold;\n"
 "	color: #3282b8;\n"
 "	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #dae1e7;\n"
 "}\n"
 "\n"
@@ -288,7 +298,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -305,7 +316,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -323,6 +335,7 @@ public:
 "	font: bold;\n"
 "	color: #3282b8;\n"
 "	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #dae1e7;\n"
 "}\n"
 "\n"
@@ -339,7 +352,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -356,7 +370,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -373,7 +388,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -390,7 +406,8 @@ public:
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
-"	border: none;\n"
+"	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #f6f5f5;\n"
 "}\n"
 "\n"
@@ -408,6 +425,7 @@ public:
 "	font: bold;\n"
 "	color: #3282b8;\n"
 "	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #dae1e7;\n"
 "}\n"
 "\n"
@@ -425,6 +443,7 @@ public:
 "	font: bold;\n"
 "	color: #dae1e7; \n"
 "	border: outset;\n"
+"	border-radius: 6px;\n"
 "	background-color: #3282b8;\n"
 "}\n"
 "\n"
@@ -437,6 +456,9 @@ public:
 
         verticalLayout->addLayout(gridLayout_5);
 
+#if QT_CONFIG(shortcut)
+        listNameInput_label->setBuddy(listNameInput_label);
+#endif // QT_CONFIG(shortcut)
 
         retranslateUi(ListAddingDialog);
 
@@ -447,7 +469,7 @@ public:
     {
         ListAddingDialog->setWindowTitle(QCoreApplication::translate("ListAddingDialog", "Dialog", nullptr));
         list_label->setText(QCoreApplication::translate("ListAddingDialog", "List", nullptr));
-        listName_label->setText(QCoreApplication::translate("ListAddingDialog", "TextLabel", nullptr));
+        listNameInput_label->setText(QString());
         priceInput->setText(QCoreApplication::translate("ListAddingDialog", "0", nullptr));
         selectAll_button->setText(QCoreApplication::translate("ListAddingDialog", "Select All", nullptr));
         five->setText(QCoreApplication::translate("ListAddingDialog", "5", nullptr));

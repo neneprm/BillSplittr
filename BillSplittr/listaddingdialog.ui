@@ -26,7 +26,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: none;</string>
+   <string notr="true">background: rgb(236, 236, 236);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -51,7 +51,7 @@ color: #0f4c75;</string>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="listName_label">
+    <widget class="QLabel" name="listNameInput_label">
      <property name="maximumSize">
       <size>
        <width>400</width>
@@ -64,10 +64,13 @@ font: bold;
 color: #0f4c75;</string>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>listNameInput_label</cstring>
      </property>
     </widget>
    </item>
@@ -130,7 +133,7 @@ background-color: white;</string>
 	font: bold;
 	color: #3282b8;
 	border: solid;
-	border-radius: 4px;
+	border-radius: 10px;
 	border-color: #3282b8;
 	border-width: 2px;
 }
@@ -166,7 +169,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -192,7 +196,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -218,7 +223,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -245,6 +251,7 @@ QPushButton:pressed{
 	font: bold;
 	color: #3282b8;
 	border: outset;
+	border-radius: 6px;
 	background-color: #dae1e7;
 }
 
@@ -270,7 +277,9 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
+	border-left: none;
 	background-color: #f6f5f5;
 }
 
@@ -296,7 +305,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -323,6 +333,7 @@ QPushButton:pressed{
 	font: bold;
 	color: #3282b8;
 	border: outset;
+	border-radius: 6px;
 	background-color: #dae1e7;
 }
 
@@ -348,7 +359,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -375,6 +387,7 @@ QPushButton:pressed{
 	font: bold;
 	color: #3282b8;
 	border: outset;
+	border-radius: 6px;
 	background-color: #dae1e7;
 }
 
@@ -400,7 +413,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -426,7 +440,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -453,6 +468,7 @@ QPushButton:pressed{
 	font: bold;
 	color: #3282b8;
 	border: outset;
+	border-radius: 6px;
 	background-color: #dae1e7;
 }
 
@@ -478,7 +494,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -504,7 +521,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -530,7 +548,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -556,7 +575,8 @@ QPushButton:pressed{
 	font: 18px;
 	font: bold;
 	color: #0f4c75;
-	border: none;
+	border: outset;
+	border-radius: 6px;
 	background-color: #f6f5f5;
 }
 
@@ -583,6 +603,7 @@ QPushButton:pressed{
 	font: bold;
 	color: #3282b8;
 	border: outset;
+	border-radius: 6px;
 	background-color: #dae1e7;
 }
 
@@ -609,6 +630,7 @@ QPushButton:pressed{
 	font: bold;
 	color: #dae1e7; 
 	border: outset;
+	border-radius: 6px;
 	background-color: #3282b8;
 }
 

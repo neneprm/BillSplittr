@@ -12,7 +12,7 @@ class ListAddingDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ListAddingDialog(QWidget *parent = nullptr);
+    explicit ListAddingDialog(QWidget *parent = nullptr, QString listName = "");
     ~ListAddingDialog();
 
 private:
