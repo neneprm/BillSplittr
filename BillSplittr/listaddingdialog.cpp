@@ -8,6 +8,8 @@ ListAddingDialog::ListAddingDialog(QWidget *parent, QString listName) :
     ui->setupUi(this);
     ui->listNameInput_label->setText(listName);
     ui->priceInput->setText(QString::number(priceVal));
+    ui->priceInput->setReadOnly(true);
+
     for(int i{0}; i <= 10; ++i)
     {
         QString butName = "button" + QString::number(i);
@@ -18,6 +20,14 @@ ListAddingDialog::ListAddingDialog(QWidget *parent, QString listName) :
     connect(ui->multiply_button, SIGNAL(clicked()), this, SLOT(on_math_button_clicked()));
     connect(ui->minus_button, SIGNAL(clicked()), this, SLOT(on_math_button_clicked()));
     connect(ui->plus_button, SIGNAL(clicked()), this, SLOT(on_math_button_clicked()));
+
+
+}
+
+void ListAddingDialog::setPayerList(QVector<Payer *> list)
+{
+    payerList = list;
+    setNameList();
 }
 
 ListAddingDialog::~ListAddingDialog()
@@ -96,4 +106,29 @@ void ListAddingDialog::on_equal_button_clicked()
 void ListAddingDialog::on_del_button_clicked()
 {
     ui->priceInput->backspace();
+}
+
+void ListAddingDialog::setNameList()
+{
+    nameGridLayout = new QGridLayout(ui->nameList_scrollAreaWidgetContents);
+    for (int i{0}; i<payerList.size(); i++)
+    {
+        QPushButton *nameButton = new QPushButton(payerList.at(i)->getName(), this);
+        nameButton->setStyleSheet("QPushButton{font: 14px;font: bold; color: #0f4c75; border: solid; border-radius: 6px; border-color: #0f4c75; border-width: 2px;}"
+                                  "QPushButton:checked{background-color: #0f4c75; color: #f6f5f5; border: outset; border-radius: 6px;}");
+        nameButton->setFixedSize(QSize(280,30));
+        nameButton->setCheckable(true);
+        nameGridLayout->setSpacing(1);
+        nameGridLayout->addWidget(nameButton,i,0,Qt::AlignCenter);
+        nameButtonList.push_back(nameButton);
+    }
+}
+
+void ListAddingDialog::on_selectAll_button_clicked()
+{
+    for (int i{0}; i<nameButtonList.size(); i++)
+    {
+        nameButtonList.at(i)->setChecked(true);
+
+    }
 }

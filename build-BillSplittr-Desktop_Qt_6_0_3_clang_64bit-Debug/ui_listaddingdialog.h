@@ -30,7 +30,7 @@ public:
     QLabel *listNameInput_label;
     QLineEdit *priceInput;
     QScrollArea *nameList_scrollArea;
-    QWidget *scrollAreaWidgetContents;
+    QWidget *nameList_scrollAreaWidgetContents;
     QPushButton *selectAll_button;
     QGridLayout *gridLayout_5;
     QPushButton *button5;
@@ -88,7 +88,7 @@ public:
         priceInput->setStyleSheet(QString::fromUtf8("font: 36px;\n"
 "font: bold;\n"
 "color: #0f4c75;\n"
-"background-color: white;\n"
+"background-color: #f6f5f5;\n"
 "border-radius: 10px;"));
         priceInput->setAlignment(Qt::AlignCenter);
 
@@ -98,12 +98,17 @@ public:
         nameList_scrollArea->setObjectName(QString::fromUtf8("nameList_scrollArea"));
         nameList_scrollArea->setMaximumSize(QSize(400, 150));
         nameList_scrollArea->setStyleSheet(QString::fromUtf8("background-color: #dae1e7;\n"
-"border-radius: 10px;"));
+"border-radius: 10px;\n"
+"font: 16px;\n"
+"font-weight: bold;\n"
+"color: #0f4c75;;"));
+        nameList_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        nameList_scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         nameList_scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 376, 150));
-        nameList_scrollArea->setWidget(scrollAreaWidgetContents);
+        nameList_scrollAreaWidgetContents = new QWidget();
+        nameList_scrollAreaWidgetContents->setObjectName(QString::fromUtf8("nameList_scrollAreaWidgetContents"));
+        nameList_scrollAreaWidgetContents->setGeometry(QRect(0, 0, 376, 150));
+        nameList_scrollArea->setWidget(nameList_scrollAreaWidgetContents);
 
         verticalLayout->addWidget(nameList_scrollArea);
 

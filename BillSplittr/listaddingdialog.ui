@@ -86,7 +86,7 @@ color: #0f4c75;</string>
       <string notr="true">font: 36px;
 font: bold;
 color: #0f4c75;
-background-color: white;
+background-color: #f6f5f5;
 border-radius: 10px;</string>
      </property>
      <property name="text">
@@ -107,12 +107,21 @@ border-radius: 10px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #dae1e7;
-border-radius: 10px;</string>
+border-radius: 10px;
+font: 16px;
+font-weight: bold;
+color: #0f4c75;;</string>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
+     <widget class="QWidget" name="nameList_scrollAreaWidgetContents">
       <property name="geometry">
        <rect>
         <x>0</x>
