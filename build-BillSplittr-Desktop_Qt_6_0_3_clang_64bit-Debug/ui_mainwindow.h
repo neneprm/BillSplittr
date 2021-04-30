@@ -232,7 +232,7 @@ public:
         listInput = new QLineEdit(list_tab);
         listInput->setObjectName(QString::fromUtf8("listInput"));
         listInput->setMaximumSize(QSize(250, 30));
-        listInput->setStyleSheet(QString::fromUtf8("background: white;\n"
+        listInput->setStyleSheet(QString::fromUtf8("background-color: #f6f5f5;\n"
 "border-radius: 4px;\n"
 "color: #0f4c75;\n"
 "font: 14px;\n"
@@ -314,7 +314,7 @@ public:
         name_scrollArea->setMaximumSize(QSize(400, 200));
         name_scrollArea->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font-weight: bold;\n"
-"color: #0f4c75;;"));
+"color: #0f4c75;"));
         name_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         name_scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         name_scrollArea->setWidgetResizable(true);
@@ -331,7 +331,7 @@ public:
         nameInput = new QLineEdit(payer_tab);
         nameInput->setObjectName(QString::fromUtf8("nameInput"));
         nameInput->setMaximumSize(QSize(250, 30));
-        nameInput->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        nameInput->setStyleSheet(QString::fromUtf8("background-color: #f6f5f5;\n"
 "border-radius: 4px;\n"
 "color: #0f4c75;\n"
 "font: 14px;\n"
@@ -407,7 +407,7 @@ public:
         QObject::connect(nameInput, &QLineEdit::returnPressed, nameAdd_button, qOverload<>(&QPushButton::animateClick));
         QObject::connect(listInput, &QLineEdit::returnPressed, listAdd_button, qOverload<>(&QPushButton::animateClick));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

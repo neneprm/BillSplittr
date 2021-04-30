@@ -57,6 +57,8 @@ void MainWindow::on_listAdd_button_clicked()
     if(ui->listInput->text() != nullptr)
     {
         listAddingDialog = new ListAddingDialog(this, ui->listInput->text());
+        listAddingDialog->setPayerList(payerList);
+
         ui->listInput->clear();
         listAddingDialog->show();
     }

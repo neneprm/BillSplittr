@@ -185,7 +185,7 @@ QTabBar::tab:selected {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="list_tab">
        <attribute name="title">
@@ -288,7 +288,7 @@ color: #3282b8;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background: white;
+             <string notr="true">background-color: #f6f5f5;
 border-radius: 4px;
 color: #0f4c75;
 font: 14px;
@@ -414,7 +414,7 @@ color: #3282b8;</string>
           <property name="styleSheet">
            <string notr="true">font: 16px;
 font-weight: bold;
-color: #0f4c75;;</string>
+color: #0f4c75;</string>
           </property>
           <property name="verticalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -451,7 +451,7 @@ color: #0f4c75;;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: white;
+             <string notr="true">background-color: #f6f5f5;
 border-radius: 4px;
 color: #0f4c75;
 font: 14px;
