@@ -88,7 +88,8 @@ public:
         priceInput->setStyleSheet(QString::fromUtf8("font: 36px;\n"
 "font: bold;\n"
 "color: #0f4c75;\n"
-"background-color: white;"));
+"background-color: white;\n"
+"border-radius: 10px;"));
         priceInput->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(priceInput);
@@ -96,10 +97,12 @@ public:
         nameList_scrollArea = new QScrollArea(ListAddingDialog);
         nameList_scrollArea->setObjectName(QString::fromUtf8("nameList_scrollArea"));
         nameList_scrollArea->setMaximumSize(QSize(400, 150));
+        nameList_scrollArea->setStyleSheet(QString::fromUtf8("background-color: #dae1e7;\n"
+"border-radius: 10px;"));
         nameList_scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 374, 148));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 376, 150));
         nameList_scrollArea->setWidget(scrollAreaWidgetContents);
 
         verticalLayout->addWidget(nameList_scrollArea);
@@ -461,6 +464,7 @@ public:
 #endif // QT_CONFIG(shortcut)
 
         retranslateUi(ListAddingDialog);
+        QObject::connect(zero, &QPushButton::clicked, priceInput, qOverload<>(&QLineEdit::paste));
 
         QMetaObject::connectSlotsByName(ListAddingDialog);
     } // setupUi
@@ -470,7 +474,7 @@ public:
         ListAddingDialog->setWindowTitle(QCoreApplication::translate("ListAddingDialog", "Dialog", nullptr));
         list_label->setText(QCoreApplication::translate("ListAddingDialog", "List", nullptr));
         listNameInput_label->setText(QString());
-        priceInput->setText(QCoreApplication::translate("ListAddingDialog", "0", nullptr));
+        priceInput->setText(QString());
         selectAll_button->setText(QCoreApplication::translate("ListAddingDialog", "Select All", nullptr));
         five->setText(QCoreApplication::translate("ListAddingDialog", "5", nullptr));
         del_button->setText(QCoreApplication::translate("ListAddingDialog", "\342\214\253", nullptr));

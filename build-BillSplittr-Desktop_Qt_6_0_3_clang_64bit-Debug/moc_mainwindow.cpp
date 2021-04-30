@@ -30,15 +30,15 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 10), // "MainWindow"
-QT_MOC_LITERAL(11, 25), // "on_nameAdd_button_clicked"
-QT_MOC_LITERAL(37, 0), // ""
-QT_MOC_LITERAL(38, 25), // "on_listAdd_button_clicked"
-QT_MOC_LITERAL(64, 30) // "on_clearAllName_button_clicked"
+QT_MOC_LITERAL(11, 30), // "on_clearAllName_button_clicked"
+QT_MOC_LITERAL(42, 0), // ""
+QT_MOC_LITERAL(43, 25), // "on_nameAdd_button_clicked"
+QT_MOC_LITERAL(69, 25) // "on_listAdd_button_clicked"
 
     },
-    "MainWindow\0on_nameAdd_button_clicked\0"
-    "\0on_listAdd_button_clicked\0"
-    "on_clearAllName_button_clicked"
+    "MainWindow\0on_clearAllName_button_clicked\0"
+    "\0on_nameAdd_button_clicked\0"
+    "on_listAdd_button_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,9 +74,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_nameAdd_button_clicked(); break;
-        case 1: _t->on_listAdd_button_clicked(); break;
-        case 2: _t->on_clearAllName_button_clicked(); break;
+        case 0: _t->on_clearAllName_button_clicked(); break;
+        case 1: _t->on_nameAdd_button_clicked(); break;
+        case 2: _t->on_listAdd_button_clicked(); break;
         default: ;
         }
     }

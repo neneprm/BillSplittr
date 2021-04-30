@@ -86,10 +86,11 @@ color: #0f4c75;</string>
       <string notr="true">font: 36px;
 font: bold;
 color: #0f4c75;
-background-color: white;</string>
+background-color: white;
+border-radius: 10px;</string>
      </property>
      <property name="text">
-      <string>0</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -104,6 +105,10 @@ background-color: white;</string>
        <height>150</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #dae1e7;
+border-radius: 10px;</string>
+     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -112,8 +117,8 @@ background-color: white;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>374</width>
-        <height>148</height>
+        <width>376</width>
+        <height>150</height>
        </rect>
       </property>
      </widget>
@@ -648,5 +653,22 @@ QPushButton:pressed{
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>zero</sender>
+   <signal>clicked()</signal>
+   <receiver>priceInput</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>151</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>168</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

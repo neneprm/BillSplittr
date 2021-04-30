@@ -21,19 +21,18 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_clearAllName_button_clicked();
     void on_nameAdd_button_clicked();
-
     void on_listAdd_button_clicked();
 
-    void on_clearAllName_button_clicked();
-
 private:
-    int numPayer{0};
     Ui::MainWindow *ui;
+
     ListAddingDialog *listAddingDialog;
     QLabel *listNameInput_label;
     QGridLayout *payerGridLayout;
     QVector<Payer*>payerList;
+    int numPayer{0};
 
     void clearLayout(QLayout *layout);
 

@@ -9,6 +9,7 @@ class List
 private:
     QString listName;
     int price;
+
 public:
     List(QString listName = "", int price = 0);
 };
