@@ -33,22 +33,22 @@ public:
     QWidget *scrollAreaWidgetContents;
     QPushButton *selectAll_button;
     QGridLayout *gridLayout_5;
-    QPushButton *five;
+    QPushButton *button5;
     QPushButton *del_button;
-    QPushButton *two;
+    QPushButton *button2;
     QPushButton *multiply_button;
-    QPushButton *nine;
+    QPushButton *button9;
     QPushButton *clear_button;
     QPushButton *divide_button;
-    QPushButton *one;
+    QPushButton *button1;
     QPushButton *minus_button;
-    QPushButton *six;
-    QPushButton *eight;
+    QPushButton *button6;
+    QPushButton *button8;
     QPushButton *plus_button;
-    QPushButton *four;
-    QPushButton *seven;
-    QPushButton *zero;
-    QPushButton *three;
+    QPushButton *button4;
+    QPushButton *button7;
+    QPushButton *button0;
+    QPushButton *button3;
     QPushButton *equal_button;
     QPushButton *done_button;
 
@@ -131,10 +131,10 @@ public:
         gridLayout_5->setSpacing(0);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         gridLayout_5->setSizeConstraint(QLayout::SetMaximumSize);
-        five = new QPushButton(ListAddingDialog);
-        five->setObjectName(QString::fromUtf8("five"));
-        five->setMaximumSize(QSize(100, 40));
-        five->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button5 = new QPushButton(ListAddingDialog);
+        button5->setObjectName(QString::fromUtf8("button5"));
+        button5->setMaximumSize(QSize(100, 40));
+        button5->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -147,7 +147,7 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(five, 1, 1, 1, 1);
+        gridLayout_5->addWidget(button5, 1, 1, 1, 1);
 
         del_button = new QPushButton(ListAddingDialog);
         del_button->setObjectName(QString::fromUtf8("del_button"));
@@ -167,10 +167,10 @@ public:
 
         gridLayout_5->addWidget(del_button, 3, 2, 1, 1);
 
-        two = new QPushButton(ListAddingDialog);
-        two->setObjectName(QString::fromUtf8("two"));
-        two->setMaximumSize(QSize(100, 40));
-        two->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button2 = new QPushButton(ListAddingDialog);
+        button2->setObjectName(QString::fromUtf8("button2"));
+        button2->setMaximumSize(QSize(100, 40));
+        button2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -183,7 +183,7 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(two, 2, 1, 1, 1);
+        gridLayout_5->addWidget(button2, 2, 1, 1, 1);
 
         multiply_button = new QPushButton(ListAddingDialog);
         multiply_button->setObjectName(QString::fromUtf8("multiply_button"));
@@ -203,10 +203,10 @@ public:
 
         gridLayout_5->addWidget(multiply_button, 1, 3, 1, 1);
 
-        nine = new QPushButton(ListAddingDialog);
-        nine->setObjectName(QString::fromUtf8("nine"));
-        nine->setMaximumSize(QSize(100, 40));
-        nine->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button9 = new QPushButton(ListAddingDialog);
+        button9->setObjectName(QString::fromUtf8("button9"));
+        button9->setMaximumSize(QSize(100, 40));
+        button9->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -220,7 +220,7 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(nine, 0, 2, 1, 1);
+        gridLayout_5->addWidget(button9, 0, 2, 1, 1);
 
         clear_button = new QPushButton(ListAddingDialog);
         clear_button->setObjectName(QString::fromUtf8("clear_button"));
@@ -258,10 +258,10 @@ public:
 
         gridLayout_5->addWidget(divide_button, 0, 3, 1, 1);
 
-        one = new QPushButton(ListAddingDialog);
-        one->setObjectName(QString::fromUtf8("one"));
-        one->setMaximumSize(QSize(100, 40));
-        one->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button1 = new QPushButton(ListAddingDialog);
+        button1->setObjectName(QString::fromUtf8("button1"));
+        button1->setMaximumSize(QSize(100, 40));
+        button1->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -274,7 +274,7 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(one, 2, 0, 1, 1);
+        gridLayout_5->addWidget(button1, 2, 0, 1, 1);
 
         minus_button = new QPushButton(ListAddingDialog);
         minus_button->setObjectName(QString::fromUtf8("minus_button"));
@@ -294,10 +294,10 @@ public:
 
         gridLayout_5->addWidget(minus_button, 2, 3, 1, 1);
 
-        six = new QPushButton(ListAddingDialog);
-        six->setObjectName(QString::fromUtf8("six"));
-        six->setMaximumSize(QSize(100, 40));
-        six->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button6 = new QPushButton(ListAddingDialog);
+        button6->setObjectName(QString::fromUtf8("button6"));
+        button6->setMaximumSize(QSize(100, 40));
+        button6->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -310,12 +310,12 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(six, 1, 2, 1, 1);
+        gridLayout_5->addWidget(button6, 1, 2, 1, 1);
 
-        eight = new QPushButton(ListAddingDialog);
-        eight->setObjectName(QString::fromUtf8("eight"));
-        eight->setMaximumSize(QSize(100, 40));
-        eight->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button8 = new QPushButton(ListAddingDialog);
+        button8->setObjectName(QString::fromUtf8("button8"));
+        button8->setMaximumSize(QSize(100, 40));
+        button8->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -328,7 +328,7 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(eight, 0, 1, 1, 1);
+        gridLayout_5->addWidget(button8, 0, 1, 1, 1);
 
         plus_button = new QPushButton(ListAddingDialog);
         plus_button->setObjectName(QString::fromUtf8("plus_button"));
@@ -348,10 +348,10 @@ public:
 
         gridLayout_5->addWidget(plus_button, 3, 3, 1, 1);
 
-        four = new QPushButton(ListAddingDialog);
-        four->setObjectName(QString::fromUtf8("four"));
-        four->setMaximumSize(QSize(100, 40));
-        four->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button4 = new QPushButton(ListAddingDialog);
+        button4->setObjectName(QString::fromUtf8("button4"));
+        button4->setMaximumSize(QSize(100, 40));
+        button4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -364,12 +364,12 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(four, 1, 0, 1, 1);
+        gridLayout_5->addWidget(button4, 1, 0, 1, 1);
 
-        seven = new QPushButton(ListAddingDialog);
-        seven->setObjectName(QString::fromUtf8("seven"));
-        seven->setMaximumSize(QSize(100, 40));
-        seven->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button7 = new QPushButton(ListAddingDialog);
+        button7->setObjectName(QString::fromUtf8("button7"));
+        button7->setMaximumSize(QSize(100, 40));
+        button7->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -382,12 +382,12 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(seven, 0, 0, 1, 1);
+        gridLayout_5->addWidget(button7, 0, 0, 1, 1);
 
-        zero = new QPushButton(ListAddingDialog);
-        zero->setObjectName(QString::fromUtf8("zero"));
-        zero->setMaximumSize(QSize(100, 40));
-        zero->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button0 = new QPushButton(ListAddingDialog);
+        button0->setObjectName(QString::fromUtf8("button0"));
+        button0->setMaximumSize(QSize(100, 40));
+        button0->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -400,12 +400,12 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(zero, 3, 1, 1, 1);
+        gridLayout_5->addWidget(button0, 3, 1, 1, 1);
 
-        three = new QPushButton(ListAddingDialog);
-        three->setObjectName(QString::fromUtf8("three"));
-        three->setMaximumSize(QSize(100, 40));
-        three->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        button3 = new QPushButton(ListAddingDialog);
+        button3->setObjectName(QString::fromUtf8("button3"));
+        button3->setMaximumSize(QSize(100, 40));
+        button3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 18px;\n"
 "	font: bold;\n"
 "	color: #0f4c75;\n"
@@ -418,7 +418,7 @@ public:
 "	color: #3282b8;\n"
 "}"));
 
-        gridLayout_5->addWidget(three, 2, 2, 1, 1);
+        gridLayout_5->addWidget(button3, 2, 2, 1, 1);
 
         equal_button = new QPushButton(ListAddingDialog);
         equal_button->setObjectName(QString::fromUtf8("equal_button"));
@@ -464,7 +464,7 @@ public:
 #endif // QT_CONFIG(shortcut)
 
         retranslateUi(ListAddingDialog);
-        QObject::connect(zero, &QPushButton::clicked, priceInput, qOverload<>(&QLineEdit::paste));
+        QObject::connect(clear_button, &QPushButton::clicked, priceInput, qOverload<>(&QLineEdit::clear));
 
         QMetaObject::connectSlotsByName(ListAddingDialog);
     } // setupUi
@@ -476,22 +476,22 @@ public:
         listNameInput_label->setText(QString());
         priceInput->setText(QString());
         selectAll_button->setText(QCoreApplication::translate("ListAddingDialog", "Select All", nullptr));
-        five->setText(QCoreApplication::translate("ListAddingDialog", "5", nullptr));
+        button5->setText(QCoreApplication::translate("ListAddingDialog", "5", nullptr));
         del_button->setText(QCoreApplication::translate("ListAddingDialog", "\342\214\253", nullptr));
-        two->setText(QCoreApplication::translate("ListAddingDialog", "2", nullptr));
+        button2->setText(QCoreApplication::translate("ListAddingDialog", "2", nullptr));
         multiply_button->setText(QCoreApplication::translate("ListAddingDialog", "\303\227", nullptr));
-        nine->setText(QCoreApplication::translate("ListAddingDialog", "9", nullptr));
+        button9->setText(QCoreApplication::translate("ListAddingDialog", "9", nullptr));
         clear_button->setText(QCoreApplication::translate("ListAddingDialog", "AC", nullptr));
         divide_button->setText(QCoreApplication::translate("ListAddingDialog", "\303\267", nullptr));
-        one->setText(QCoreApplication::translate("ListAddingDialog", "1", nullptr));
+        button1->setText(QCoreApplication::translate("ListAddingDialog", "1", nullptr));
         minus_button->setText(QCoreApplication::translate("ListAddingDialog", "\342\210\222", nullptr));
-        six->setText(QCoreApplication::translate("ListAddingDialog", "6", nullptr));
-        eight->setText(QCoreApplication::translate("ListAddingDialog", "8", nullptr));
+        button6->setText(QCoreApplication::translate("ListAddingDialog", "6", nullptr));
+        button8->setText(QCoreApplication::translate("ListAddingDialog", "8", nullptr));
         plus_button->setText(QCoreApplication::translate("ListAddingDialog", "+", nullptr));
-        four->setText(QCoreApplication::translate("ListAddingDialog", "4", nullptr));
-        seven->setText(QCoreApplication::translate("ListAddingDialog", "7", nullptr));
-        zero->setText(QCoreApplication::translate("ListAddingDialog", "0", nullptr));
-        three->setText(QCoreApplication::translate("ListAddingDialog", "3", nullptr));
+        button4->setText(QCoreApplication::translate("ListAddingDialog", "4", nullptr));
+        button7->setText(QCoreApplication::translate("ListAddingDialog", "7", nullptr));
+        button0->setText(QCoreApplication::translate("ListAddingDialog", "0", nullptr));
+        button3->setText(QCoreApplication::translate("ListAddingDialog", "3", nullptr));
         equal_button->setText(QCoreApplication::translate("ListAddingDialog", "=", nullptr));
         done_button->setText(QCoreApplication::translate("ListAddingDialog", "Done \342\217\216", nullptr));
     } // retranslateUi

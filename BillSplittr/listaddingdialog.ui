@@ -162,7 +162,7 @@ QPushButton:pressed{
       <number>0</number>
      </property>
      <item row="1" column="1">
-      <widget class="QPushButton" name="five">
+      <widget class="QPushButton" name="button5">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -216,7 +216,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QPushButton" name="two">
+      <widget class="QPushButton" name="button2">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -270,7 +270,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="0" column="2">
-      <widget class="QPushButton" name="nine">
+      <widget class="QPushButton" name="button9">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -352,7 +352,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QPushButton" name="one">
+      <widget class="QPushButton" name="button1">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -406,7 +406,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="1" column="2">
-      <widget class="QPushButton" name="six">
+      <widget class="QPushButton" name="button6">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -433,7 +433,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="eight">
+      <widget class="QPushButton" name="button8">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -487,7 +487,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QPushButton" name="four">
+      <widget class="QPushButton" name="button4">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -514,7 +514,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QPushButton" name="seven">
+      <widget class="QPushButton" name="button7">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -541,7 +541,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QPushButton" name="zero">
+      <widget class="QPushButton" name="button0">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -568,7 +568,7 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="2" column="2">
-      <widget class="QPushButton" name="three">
+      <widget class="QPushButton" name="button3">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -655,18 +655,18 @@ QPushButton:pressed{
  <resources/>
  <connections>
   <connection>
-   <sender>zero</sender>
+   <sender>clear_button</sender>
    <signal>clicked()</signal>
    <receiver>priceInput</receiver>
-   <slot>paste()</slot>
+   <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>510</y>
+     <x>74</x>
+     <y>503</y>
     </hint>
     <hint type="destinationlabel">
-     <x>168</x>
-     <y>107</y>
+     <x>80</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
