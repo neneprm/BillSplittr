@@ -16,17 +16,20 @@ class ListAddingDialog : public QDialog
 
 public:
     explicit ListAddingDialog(QWidget *parent = nullptr, QString listName = "");
-    void setPayerList(QVector<Payer*>list);
-
     ~ListAddingDialog();
 
+    QString getPriceVal();
+    int priceVal{};
+
+    void setPayerList(QVector<Payer*> list);
+
 private slots:
-    void on_num_button_clicked();
-    void on_math_button_clicked();
+    void numButton_clicked();
+    void mathButton_clicked();
     void on_equal_button_clicked();
     void on_del_button_clicked();
-
     void on_selectAll_button_clicked();
+    void on_done_button_clicked();
 
 private:
     Ui::ListAddingDialog *ui;
@@ -37,11 +40,12 @@ private:
     QVector<Payer*> payerList;
     QGridLayout *nameGridLayout;
 
-    int priceVal{};
+
     bool isAdd = false;
     bool isSubtract = false;
     bool isMultiply = false;
     bool isDivide = false;
+
     void setNameList();
 };
 

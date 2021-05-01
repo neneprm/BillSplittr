@@ -1,5 +1,6 @@
 #include "listaddingdialog.h"
 #include "ui_listaddingdialog.h"
+#include <QDebug>
 
 ListAddingDialog::ListAddingDialog(QWidget *parent, QString listName) :
     QDialog(parent),
@@ -10,18 +11,48 @@ ListAddingDialog::ListAddingDialog(QWidget *parent, QString listName) :
     ui->priceInput->setText(QString::number(priceVal));
     ui->priceInput->setReadOnly(true);
 
-    for(int i{0}; i <= 10; ++i)
+    connect(ui->button0,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button1,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button2,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button3,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button4,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button5,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button6,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button7,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button8,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+    connect(ui->button9,SIGNAL(clicked()), this, SLOT(numButton_clicked()));
+
+    connect(ui->divide_button, SIGNAL(clicked()), this, SLOT(mathButton_clicked()));
+    connect(ui->multiply_button, SIGNAL(clicked()), this, SLOT(mathButton_clicked()));
+    connect(ui->minus_button, SIGNAL(clicked()), this, SLOT(mathButton_clicked()));
+    connect(ui->plus_button, SIGNAL(clicked()), this, SLOT(mathButton_clicked()));
+}
+
+ListAddingDialog::~ListAddingDialog()
+{
+    delete ui;
+}
+
+QString ListAddingDialog::getPriceVal()
+{
+    priceVal = ui->priceInput->text().toInt();
+    return QString::number(priceVal);
+}
+
+void ListAddingDialog::setNameList()
+{
+    nameGridLayout = new QGridLayout(ui->nameList_scrollAreaWidgetContents);
+    for (int i{0}; i<payerList.size(); i++)
     {
-        QString butName = "button" + QString::number(i);
-        numButtons[i] = ListAddingDialog::findChild<QPushButton *>(butName);
-        connect(numButtons[i], SIGNAL(clicked()), this, SLOT(on_num_button_clicked()));
+        QPushButton *nameButton = new QPushButton(payerList.at(i)->getName(), this);
+        nameButton->setStyleSheet("QPushButton{font: 14px;font: bold; color: #0f4c75; border: solid; border-radius: 6px; border-color: #0f4c75; border-width: 2px;}"
+                                  "QPushButton:checked{background-color: #0f4c75; color: #f6f5f5; border: outset; border-radius: 6px;}");
+        nameButton->setFixedSize(QSize(280,30));
+        nameButton->setCheckable(true);
+        nameGridLayout->setSpacing(1);
+        nameGridLayout->addWidget(nameButton,i,0,Qt::AlignCenter);
+        nameButtonList.push_back(nameButton);
     }
-    connect(ui->divide_button, SIGNAL(clicked()), this, SLOT(on_math_button_clicked()));
-    connect(ui->multiply_button, SIGNAL(clicked()), this, SLOT(on_math_button_clicked()));
-    connect(ui->minus_button, SIGNAL(clicked()), this, SLOT(on_math_button_clicked()));
-    connect(ui->plus_button, SIGNAL(clicked()), this, SLOT(on_math_button_clicked()));
-
-
 }
 
 void ListAddingDialog::setPayerList(QVector<Payer *> list)
@@ -30,12 +61,7 @@ void ListAddingDialog::setPayerList(QVector<Payer *> list)
     setNameList();
 }
 
-ListAddingDialog::~ListAddingDialog()
-{
-    delete ui;
-}
-
-void ListAddingDialog::on_num_button_clicked()
+void ListAddingDialog::numButton_clicked()
 {
     QPushButton *button = (QPushButton *)sender();
     QString buttonVal = button->text();
@@ -52,7 +78,7 @@ void ListAddingDialog::on_num_button_clicked()
     }
 }
 
-void ListAddingDialog::on_math_button_clicked()
+void ListAddingDialog::mathButton_clicked()
 {
     QString getPriceVal = ui->priceInput->text();
     priceVal = getPriceVal.toInt();
@@ -108,27 +134,40 @@ void ListAddingDialog::on_del_button_clicked()
     ui->priceInput->backspace();
 }
 
-void ListAddingDialog::setNameList()
-{
-    nameGridLayout = new QGridLayout(ui->nameList_scrollAreaWidgetContents);
-    for (int i{0}; i<payerList.size(); i++)
-    {
-        QPushButton *nameButton = new QPushButton(payerList.at(i)->getName(), this);
-        nameButton->setStyleSheet("QPushButton{font: 14px;font: bold; color: #0f4c75; border: solid; border-radius: 6px; border-color: #0f4c75; border-width: 2px;}"
-                                  "QPushButton:checked{background-color: #0f4c75; color: #f6f5f5; border: outset; border-radius: 6px;}");
-        nameButton->setFixedSize(QSize(280,30));
-        nameButton->setCheckable(true);
-        nameGridLayout->setSpacing(1);
-        nameGridLayout->addWidget(nameButton,i,0,Qt::AlignCenter);
-        nameButtonList.push_back(nameButton);
-    }
-}
-
 void ListAddingDialog::on_selectAll_button_clicked()
 {
     for (int i{0}; i<nameButtonList.size(); i++)
     {
         nameButtonList.at(i)->setChecked(true);
-
     }
+}
+
+void ListAddingDialog::on_done_button_clicked()
+{
+    int numPerson{0};
+
+    //Add numPerson
+    for(int i{0}; i<nameButtonList.size(); i++)
+    {
+        if(nameButtonList.at(i)->isChecked())
+        {
+            numPerson++;
+            priceVal = getPriceVal().toInt();
+            payerList.at(i)->amountPerPerson(priceVal/numPerson);
+        }
+    }
+
+    //Update price for selected person
+//    if(numPerson != 0)
+//    {
+//        for(int i{0}; i<nameButtonList.size(); i++)
+//        {
+//            if(nameButtonList.at(i)->isChecked())
+//            {
+//                priceVal = getPriceVal().toInt();
+//                payerList.at(i)->amountPerPerson(priceVal/numPerson);
+//            }
+//        }
+//    }
+    qDebug() << priceVal/numPerson;
 }
