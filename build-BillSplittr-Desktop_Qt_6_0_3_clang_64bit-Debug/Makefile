@@ -512,20 +512,37 @@ compiler_moc_header_make_all: moc_listaddingdialog.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_listaddingdialog.cpp moc_mainwindow.cpp
 moc_listaddingdialog.cpp: ../BillSplittr/listaddingdialog.h \
+		../BillSplittr/payer.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QVector \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		moc_predefs.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/bin/moc
 	/Users/neneprm/Qt/6.0.3/clang_64/bin/moc $(DEFINES) --include /Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/build-BillSplittr-Desktop_Qt_6_0_3_clang_64bit-Debug/moc_predefs.h -I/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/macx-clang -I/Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/BillSplittr -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtGui.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/neneprm/Qt/6.0.3/clang_64/lib ../BillSplittr/listaddingdialog.h -o moc_listaddingdialog.cpp
 
 moc_mainwindow.cpp: ../BillSplittr/mainwindow.h \
+		../BillSplittr/payer.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../BillSplittr/list.h \
 		../BillSplittr/listaddingdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QVector \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		moc_predefs.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/bin/moc
 	/Users/neneprm/Qt/6.0.3/clang_64/bin/moc $(DEFINES) --include /Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/build-BillSplittr-Desktop_Qt_6_0_3_clang_64bit-Debug/moc_predefs.h -I/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/macx-clang -I/Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/BillSplittr -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtGui.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/neneprm/Qt/6.0.3/clang_64/lib ../BillSplittr/mainwindow.h -o moc_mainwindow.cpp
@@ -560,41 +577,72 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 list.o: ../BillSplittr/list.cpp ../BillSplittr/list.h \
 		../BillSplittr/payer.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o list.o ../BillSplittr/list.cpp
 
 listaddingdialog.o: ../BillSplittr/listaddingdialog.cpp ../BillSplittr/listaddingdialog.h \
+		../BillSplittr/payer.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QVector \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		ui_listaddingdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listaddingdialog.o ../BillSplittr/listaddingdialog.cpp
 
 main.o: ../BillSplittr/main.cpp ../BillSplittr/mainwindow.h \
+		../BillSplittr/payer.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../BillSplittr/list.h \
 		../BillSplittr/listaddingdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QVector \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../BillSplittr/main.cpp
 
 mainwindow.o: ../BillSplittr/mainwindow.cpp ../BillSplittr/mainwindow.h \
+		../BillSplittr/payer.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../BillSplittr/list.h \
 		../BillSplittr/listaddingdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QVector \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QDebug \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../BillSplittr/mainwindow.cpp
 
 payer.o: ../BillSplittr/payer.cpp ../BillSplittr/payer.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o payer.o ../BillSplittr/payer.cpp
 
 moc_listaddingdialog.o: moc_listaddingdialog.cpp 

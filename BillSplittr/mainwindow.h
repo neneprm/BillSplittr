@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include "payer.h"
+#include "list.h"
 #include "listaddingdialog.h"
+
 #include <QMainWindow>
 #include <QLabel>
 #include <QGridLayout>
@@ -18,6 +20,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void addItemtoList(List *item);
     ~MainWindow();
 
 private slots:
@@ -31,10 +34,10 @@ private:
     ListAddingDialog *listAddingDialog;
     QLabel *listNameInput_label;
     QGridLayout *payerGridLayout;
-    QVector<Payer*>payerList;
+    QVector<Payer*> payerList;
+    QVector<List*> itemList;
     int numPayer{0};
 
     void clearLayout(QLayout *layout);
-
 };
 #endif // MAINWINDOW_H

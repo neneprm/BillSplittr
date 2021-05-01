@@ -33,6 +33,12 @@ void MainWindow::clearLayout(QLayout *layout)
     }
 }
 
+void MainWindow::addItemtoList(List *item)
+{
+    itemList.push_back(item);
+    //Add widget
+}
+
 void MainWindow::on_nameAdd_button_clicked()
 {
    if(ui->nameInput->text() != nullptr)
@@ -40,7 +46,7 @@ void MainWindow::on_nameAdd_button_clicked()
        Payer *payer = new Payer(ui->nameInput->text());
        ui->nameInput->clear();
        payerList.push_back(payer);
-       qDebug() << "Add payer to vector";
+       //qDebug() << "Add payer to vector";
 
        //Add payer Label
        payerGridLayout->addWidget(payer->nameLabel,numPayer,0,Qt::AlignLeft);
