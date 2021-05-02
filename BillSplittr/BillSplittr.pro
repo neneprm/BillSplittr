@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    createbilldialog.cpp \
     list.cpp \
     listaddingdialog.cpp \
     main.cpp \
@@ -16,12 +17,14 @@ SOURCES += \
     payer.cpp
 
 HEADERS += \
+    createbilldialog.h \
     list.h \
     listaddingdialog.h \
     mainwindow.h \
     payer.h
 
 FORMS += \
+    createbilldialog.ui \
     listaddingdialog.ui \
     mainwindow.ui
 
