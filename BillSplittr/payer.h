@@ -15,8 +15,8 @@ public:
 
     QLabel *nameLabel;
     QLabel *payLabel;
-    QString getName();
 
+    QString getName();
     void amountPerPerson(int calcPrice);
 };
 

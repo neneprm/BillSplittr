@@ -517,6 +517,7 @@ moc_listaddingdialog.cpp: ../BillSplittr/listaddingdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../BillSplittr/list.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QVector \
@@ -588,13 +589,16 @@ listaddingdialog.o: ../BillSplittr/listaddingdialog.cpp ../BillSplittr/listaddin
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../BillSplittr/list.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QVector \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
-		ui_listaddingdialog.h
+		ui_listaddingdialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QDebug \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listaddingdialog.o ../BillSplittr/listaddingdialog.cpp
 
 main.o: ../BillSplittr/main.cpp ../BillSplittr/mainwindow.h \
