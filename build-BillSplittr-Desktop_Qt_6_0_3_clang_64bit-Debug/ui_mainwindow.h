@@ -184,7 +184,7 @@ public:
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         listName_label = new QLabel(list_tab);
         listName_label->setObjectName(QString::fromUtf8("listName_label"));
-        listName_label->setMaximumSize(QSize(150, 100));
+        listName_label->setMaximumSize(QSize(133, 100));
         listName_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font: bold;\n"
 "color: #3282b8;"));
@@ -193,7 +193,7 @@ public:
 
         price_label = new QLabel(list_tab);
         price_label->setObjectName(QString::fromUtf8("price_label"));
-        price_label->setMaximumSize(QSize(150, 100));
+        price_label->setMaximumSize(QSize(133, 100));
         price_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font: bold;\n"
 "color: #3282b8;"));
@@ -203,7 +203,7 @@ public:
 
         perPerson_label = new QLabel(list_tab);
         perPerson_label->setObjectName(QString::fromUtf8("perPerson_label"));
-        perPerson_label->setMaximumSize(QSize(100, 100));
+        perPerson_label->setMaximumSize(QSize(133, 100));
         perPerson_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font: bold;\n"
 "color: #3282b8;"));
@@ -408,7 +408,7 @@ public:
         QObject::connect(nameInput, &QLineEdit::returnPressed, nameAdd_button, qOverload<>(&QPushButton::animateClick));
         QObject::connect(listInput, &QLineEdit::returnPressed, listAdd_button, qOverload<>(&QPushButton::animateClick));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -428,7 +428,7 @@ public:
         clearAllList_button->setText(QCoreApplication::translate("MainWindow", "Clear All List \342\214\253", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(list_tab), QCoreApplication::translate("MainWindow", "\342\230\260 List", nullptr));
         name_label->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
-        pay_label->setText(QCoreApplication::translate("MainWindow", "Pay", nullptr));
+        pay_label->setText(QCoreApplication::translate("MainWindow", "Pay   ", nullptr));
         nameAdd_button->setText(QCoreApplication::translate("MainWindow", "Add \342\217\216", nullptr));
         clearAllName_button->setText(QCoreApplication::translate("MainWindow", "Clear All Name \342\214\253", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(payer_tab), QCoreApplication::translate("MainWindow", "\354\233\203 Payer", nullptr));

@@ -76,12 +76,11 @@ void MainWindow::on_listAdd_button_clicked()
         ui->listInput->clear();
         itemList.push_back(list);
         listAddingDialog->setItem(list);
+        listAddingDialog->setTotal(ui->totalPrice);
 
         listGridLayout->addWidget(list->listLabel,itemList.size(),0, Qt::AlignLeft);
         listGridLayout->addWidget(list->priceLabel,itemList.size(),1, Qt::AlignCenter);
         listGridLayout->addWidget(list->perPersonLabel,itemList.size(),2, Qt::AlignRight);
-
-//        ui->totalPrice->setText()
     }
 }
 

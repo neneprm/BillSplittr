@@ -185,7 +185,7 @@ QTabBar::tab:selected {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="list_tab">
        <attribute name="title">
@@ -198,7 +198,7 @@ QTabBar::tab:selected {
            <widget class="QLabel" name="listName_label">
             <property name="maximumSize">
              <size>
-              <width>150</width>
+              <width>133</width>
               <height>100</height>
              </size>
             </property>
@@ -216,7 +216,7 @@ color: #3282b8;</string>
            <widget class="QLabel" name="price_label">
             <property name="maximumSize">
              <size>
-              <width>150</width>
+              <width>133</width>
               <height>100</height>
              </size>
             </property>
@@ -237,7 +237,7 @@ color: #3282b8;</string>
            <widget class="QLabel" name="perPerson_label">
             <property name="maximumSize">
              <size>
-              <width>100</width>
+              <width>133</width>
               <height>100</height>
              </size>
             </property>
@@ -401,7 +401,7 @@ font: bold;
 color: #3282b8;</string>
             </property>
             <property name="text">
-             <string>Pay</string>
+             <string>Pay   </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

@@ -39,6 +39,7 @@ private:
     QVector<Payer*> payerList;
     QVector<List*> itemList;
     int numPayer{0};
+    int total{0};
 
     void clearLayout(QLayout *layout);
 };
