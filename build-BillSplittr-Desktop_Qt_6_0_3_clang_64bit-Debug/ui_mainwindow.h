@@ -44,7 +44,6 @@ public:
     QLabel *perPerson_label;
     QScrollArea *list_scrollArea;
     QWidget *list_scrollAreaWidgetContents;
-    QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *listInput;
     QPushButton *listAdd_button;
@@ -185,7 +184,7 @@ public:
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         listName_label = new QLabel(list_tab);
         listName_label->setObjectName(QString::fromUtf8("listName_label"));
-        listName_label->setMaximumSize(QSize(200, 100));
+        listName_label->setMaximumSize(QSize(150, 100));
         listName_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font: bold;\n"
 "color: #3282b8;"));
@@ -194,10 +193,11 @@ public:
 
         price_label = new QLabel(list_tab);
         price_label->setObjectName(QString::fromUtf8("price_label"));
-        price_label->setMaximumSize(QSize(100, 100));
+        price_label->setMaximumSize(QSize(150, 100));
         price_label->setStyleSheet(QString::fromUtf8("font: 16px;\n"
 "font: bold;\n"
 "color: #3282b8;"));
+        price_label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(price_label);
 
@@ -217,12 +217,13 @@ public:
         list_scrollArea = new QScrollArea(list_tab);
         list_scrollArea->setObjectName(QString::fromUtf8("list_scrollArea"));
         list_scrollArea->setMaximumSize(QSize(400, 200));
+        list_scrollArea->setStyleSheet(QString::fromUtf8("font: 16px;\n"
+"font-weight: bold;\n"
+"color: #0f4c75;"));
         list_scrollArea->setWidgetResizable(true);
         list_scrollAreaWidgetContents = new QWidget();
         list_scrollAreaWidgetContents->setObjectName(QString::fromUtf8("list_scrollAreaWidgetContents"));
         list_scrollAreaWidgetContents->setGeometry(QRect(0, 0, 336, 200));
-        verticalLayout_7 = new QVBoxLayout(list_scrollAreaWidgetContents);
-        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
         list_scrollArea->setWidget(list_scrollAreaWidgetContents);
 
         verticalLayout_3->addWidget(list_scrollArea);

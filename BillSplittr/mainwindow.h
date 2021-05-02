@@ -20,13 +20,14 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    void addItemtoList(List *item);
     ~MainWindow();
 
+    void addItemtoList(List *item);
+
 private slots:
-    void on_clearAllName_button_clicked();
     void on_nameAdd_button_clicked();
     void on_listAdd_button_clicked();
+    void on_clearAllName_button_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -34,6 +35,7 @@ private:
     ListAddingDialog *listAddingDialog;
     QLabel *listNameInput_label;
     QGridLayout *payerGridLayout;
+    QGridLayout *listGridLayout;
     QVector<Payer*> payerList;
     QVector<List*> itemList;
     int numPayer{0};

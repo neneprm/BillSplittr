@@ -8,6 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     payerGridLayout = new QGridLayout(ui->name_scrollAreaWidgetContents);
+    listGridLayout = new QGridLayout(ui->list_scrollAreaWidgetContents);
+
+//    addItemtoList(list);
 }
 
 MainWindow::~MainWindow()
@@ -33,10 +36,13 @@ void MainWindow::clearLayout(QLayout *layout)
     }
 }
 
-void MainWindow::addItemtoList(List *item)
+void MainWindow::addItemtoList(List *list)
 {
-    itemList.push_back(item);
+    itemList.push_back(list);
     //Add widget
+    listGridLayout->addWidget(list->listLabel,0,0, Qt::AlignLeft);
+    listGridLayout->addWidget(list->priceLabel,0,1, Qt::AlignRight);
+    listGridLayout->addWidget(list->perPersonLabel,0,2, Qt::AlignRight);
 }
 
 void MainWindow::on_nameAdd_button_clicked()
@@ -64,9 +70,18 @@ void MainWindow::on_listAdd_button_clicked()
     {
         listAddingDialog = new ListAddingDialog(this, ui->listInput->text());
         listAddingDialog->setPayerList(payerList);
-
-        ui->listInput->clear();
         listAddingDialog->show();
+
+        List *list = new List(ui->listInput->text());
+        ui->listInput->clear();
+        itemList.push_back(list);
+        listAddingDialog->setItem(list);
+
+        listGridLayout->addWidget(list->listLabel,itemList.size(),0, Qt::AlignLeft);
+        listGridLayout->addWidget(list->priceLabel,itemList.size(),1, Qt::AlignCenter);
+        listGridLayout->addWidget(list->perPersonLabel,itemList.size(),2, Qt::AlignRight);
+
+//        ui->totalPrice->setText()
     }
 }
 
