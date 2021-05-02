@@ -408,7 +408,7 @@ public:
         QObject::connect(nameInput, &QLineEdit::returnPressed, nameAdd_button, qOverload<>(&QPushButton::animateClick));
         QObject::connect(listInput, &QLineEdit::returnPressed, listAdd_button, qOverload<>(&QPushButton::animateClick));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
