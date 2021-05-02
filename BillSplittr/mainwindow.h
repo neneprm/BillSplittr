@@ -29,6 +29,8 @@ private slots:
     void on_listAdd_button_clicked();
     void on_clearAllName_button_clicked();
 
+    void on_clearAllList_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -39,7 +41,6 @@ private:
     QVector<Payer*> payerList;
     QVector<List*> itemList;
     int numPayer{0};
-    int total{0};
 
     void clearLayout(QLayout *layout);
 };

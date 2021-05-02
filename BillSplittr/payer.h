@@ -18,6 +18,7 @@ public:
 
     QString getName();
     void amountPerPerson(int calcPrice);
+    void resetPrice();
 };
 
 #endif // PAYER_H

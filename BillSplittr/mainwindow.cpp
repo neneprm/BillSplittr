@@ -90,4 +90,15 @@ void MainWindow::on_clearAllName_button_clicked()
     ui->numPeople->setText(QString::number(numPayer));
     payerList.clear();
     clearLayout(payerGridLayout);
+    on_clearAllList_button_clicked();
+}
+
+void MainWindow::on_clearAllList_button_clicked()
+{
+    ui->totalPrice->setText("0");
+    itemList.clear();
+    clearLayout(listGridLayout);
+    for(int i{0};i<payerList.size();i++){
+        payerList.at(i)->resetPrice();
+    }
 }

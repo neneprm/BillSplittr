@@ -1,5 +1,11 @@
 #include "payer.h"
 
+void Payer::resetPrice()
+{
+    this->pay_amount = 0;
+    payLabel->setText(QString::number(pay_amount));
+}
+
 Payer::Payer(QString name, int pay_amount)
 {
     this->name = name;
