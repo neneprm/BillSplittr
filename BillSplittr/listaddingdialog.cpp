@@ -54,6 +54,12 @@ void ListAddingDialog::setNameList()
     }
 }
 
+void ListAddingDialog::setNewTotal(int newTotal)
+{
+    int oldTotal = total->text().toInt();
+    total->setText(QString::number(oldTotal + newTotal));
+}
+
 void ListAddingDialog::setPayerList(QVector<Payer *> list)
 {
     payerList = list;
@@ -63,6 +69,11 @@ void ListAddingDialog::setPayerList(QVector<Payer *> list)
 void ListAddingDialog::setItem(List *item)
 {
     this->itemPtr = item;
+}
+
+void ListAddingDialog::setTotal(QLabel *total)
+{
+    this->total = total;
 }
 
 void ListAddingDialog::numButton_clicked()
@@ -159,33 +170,32 @@ void ListAddingDialog::on_done_button_clicked()
              numPerson++;
         }
     }
-    if(numPerson >0){
 
-    if(numPerson != 0)
+    if(numPerson > 0)
     {
-        perPerson = priceVal/numPerson;
-    }
-    else{
-        perPerson = 0;
-    }
 
-    //Calculate amount per selected person
-    for(int i{0}; i<nameButtonList.size(); i++)
-    {
-        if((nameButtonList.at(i)->isChecked()) && (numPerson != 0))
+        if(numPerson != 0)
         {
-
-            payerList.at(i)->amountPerPerson(perPerson);
-
-//            qDebug() << nameButtonList.at(i)->text();
-//            qDebug() << priceVal;
-//            qDebug() << perPerson;
+            perPerson = priceVal/numPerson;
+        }
+        else
+        {
+            perPerson = 0;
         }
 
-    }
-    this->itemPtr->setNewPrice(priceVal);
-//    qDebug() << perPerson;
-    this->itemPtr->setNewPerPerson(perPerson);
-    this->close();
+        //Calculate amount per selected person
+        for(int i{0}; i<nameButtonList.size(); i++)
+        {
+            if((nameButtonList.at(i)->isChecked()) && (numPerson != 0))
+            {
+
+                payerList.at(i)->amountPerPerson(perPerson);
+            }
+        }
+
+        this->itemPtr->setNewPrice(priceVal);
+        this->itemPtr->setNewPerPerson(perPerson);
+        setNewTotal(priceVal);
+        this->close();
     }
 }

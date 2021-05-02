@@ -24,6 +24,7 @@ public:
     int getPriceVal();
     void setPayerList(QVector<Payer*> list);
     void setItem(List* item);
+    void setTotal(QLabel* total);
 
 private slots:
     void numButton_clicked();
@@ -36,13 +37,11 @@ private slots:
 private:
     Ui::ListAddingDialog *ui;
 
-    QPushButton *numButtons[10];
-    QPushButton *nameButton;
+    QLabel *total;
     QVector<QPushButton*> nameButtonList;
     QVector<Payer*> payerList;
     QGridLayout *nameGridLayout;
     List *itemPtr;
-
 
     bool isAdd = false;
     bool isSubtract = false;
@@ -50,6 +49,7 @@ private:
     bool isDivide = false;
 
     void setNameList();
+    void setNewTotal(int newTotal);
 };
 
 #endif // LISTADDINGDIALOG_H
