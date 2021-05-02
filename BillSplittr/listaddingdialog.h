@@ -2,6 +2,7 @@
 #define LISTADDINGDIALOG_H
 
 #include "payer.h"
+#include "list.h"
 #include <QDialog>
 #include <QVector>
 #include <QGridLayout>
@@ -18,10 +19,11 @@ public:
     explicit ListAddingDialog(QWidget *parent = nullptr, QString listName = "");
     ~ListAddingDialog();
 
-    QString getPriceVal();
     int priceVal{};
 
+    int getPriceVal();
     void setPayerList(QVector<Payer*> list);
+    void setItem(List* item);
 
 private slots:
     void numButton_clicked();
@@ -39,6 +41,7 @@ private:
     QVector<QPushButton*> nameButtonList;
     QVector<Payer*> payerList;
     QGridLayout *nameGridLayout;
+    List *itemPtr;
 
 
     bool isAdd = false;

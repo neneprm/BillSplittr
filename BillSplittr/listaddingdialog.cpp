@@ -33,10 +33,9 @@ ListAddingDialog::~ListAddingDialog()
     delete ui;
 }
 
-QString ListAddingDialog::getPriceVal()
+int ListAddingDialog::getPriceVal()
 {
-    priceVal = ui->priceInput->text().toInt();
-    return QString::number(priceVal);
+    return ui->priceInput->text().toInt();
 }
 
 void ListAddingDialog::setNameList()
@@ -59,6 +58,11 @@ void ListAddingDialog::setPayerList(QVector<Payer *> list)
 {
     payerList = list;
     setNameList();
+}
+
+void ListAddingDialog::setItem(List *item)
+{
+    this->itemPtr = item;
 }
 
 void ListAddingDialog::numButton_clicked()
@@ -144,30 +148,44 @@ void ListAddingDialog::on_selectAll_button_clicked()
 
 void ListAddingDialog::on_done_button_clicked()
 {
+    priceVal = getPriceVal();
     int numPerson{0};
+    int perPerson{0};
 
-    //Add numPerson
     for(int i{0}; i<nameButtonList.size(); i++)
     {
         if(nameButtonList.at(i)->isChecked())
         {
-            numPerson++;
-            priceVal = getPriceVal().toInt();
-            payerList.at(i)->amountPerPerson(priceVal/numPerson);
+             numPerson++;
         }
     }
+    if(numPerson >0){
 
-    //Update price for selected person
-//    if(numPerson != 0)
-//    {
-//        for(int i{0}; i<nameButtonList.size(); i++)
-//        {
-//            if(nameButtonList.at(i)->isChecked())
-//            {
-//                priceVal = getPriceVal().toInt();
-//                payerList.at(i)->amountPerPerson(priceVal/numPerson);
-//            }
-//        }
-//    }
-    qDebug() << priceVal/numPerson;
+    if(numPerson != 0)
+    {
+        perPerson = priceVal/numPerson;
+    }
+    else{
+        perPerson = 0;
+    }
+
+    //Calculate amount per selected person
+    for(int i{0}; i<nameButtonList.size(); i++)
+    {
+        if((nameButtonList.at(i)->isChecked()) && (numPerson != 0))
+        {
+
+            payerList.at(i)->amountPerPerson(perPerson);
+
+//            qDebug() << nameButtonList.at(i)->text();
+//            qDebug() << priceVal;
+//            qDebug() << perPerson;
+        }
+
+    }
+    this->itemPtr->setNewPrice(priceVal);
+//    qDebug() << perPerson;
+    this->itemPtr->setNewPerPerson(perPerson);
+    this->close();
+    }
 }
