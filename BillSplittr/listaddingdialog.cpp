@@ -41,7 +41,7 @@ int ListAddingDialog::getPriceVal()
 void ListAddingDialog::setNameList()
 {
     nameGridLayout = new QGridLayout(ui->nameList_scrollAreaWidgetContents);
-    for (int i{0}; i<payerList.size(); i++)
+    for (int i{0}; i < payerList.size(); i++)
     {
         QPushButton *nameButton = new QPushButton(payerList.at(i)->getName(), this);
         nameButton->setStyleSheet("QPushButton{font: 14px;font: bold; color: #0f4c75; border: solid; border-radius: 6px; border-color: #0f4c75; border-width: 2px;}"
@@ -78,7 +78,7 @@ void ListAddingDialog::setTotal(QLabel *total)
 
 void ListAddingDialog::numButton_clicked()
 {
-    QPushButton *button = (QPushButton *)sender();
+    QPushButton *button = (QPushButton *) sender();
     QString buttonVal = button->text();
     QString getPriceVal = ui->priceInput->text();
     if(getPriceVal.toInt() == 0)
@@ -97,7 +97,7 @@ void ListAddingDialog::mathButton_clicked()
 {
     QString getPriceVal = ui->priceInput->text();
     priceVal = getPriceVal.toInt();
-    QPushButton *button = (QPushButton *)sender();
+    QPushButton *button = (QPushButton *) sender();
     QString butVal = button->text();
     if(QString::compare(butVal, "÷", Qt::CaseInsensitive) == 0)
     {
@@ -151,7 +151,7 @@ void ListAddingDialog::on_del_button_clicked()
 
 void ListAddingDialog::on_selectAll_button_clicked()
 {
-    for (int i{0}; i<nameButtonList.size(); i++)
+    for(int i{0}; i < nameButtonList.size(); i++)
     {
         nameButtonList.at(i)->setChecked(true);
     }
@@ -163,7 +163,7 @@ void ListAddingDialog::on_done_button_clicked()
     int numPerson{0};
     int perPerson{0};
 
-    for(int i{0}; i<nameButtonList.size(); i++)
+    for(int i{0}; i < nameButtonList.size(); i++)
     {
         if(nameButtonList.at(i)->isChecked())
         {
@@ -184,7 +184,7 @@ void ListAddingDialog::on_done_button_clicked()
         }
 
         //Calculate amount per selected person
-        for(int i{0}; i<nameButtonList.size(); i++)
+        for(int i{0}; i < nameButtonList.size(); i++)
         {
             if((nameButtonList.at(i)->isChecked()) && (numPerson != 0))
             {
