@@ -476,7 +476,7 @@ public:
 
     void retranslateUi(QDialog *ListAddingDialog)
     {
-        ListAddingDialog->setWindowTitle(QCoreApplication::translate("ListAddingDialog", "Dialog", nullptr));
+        ListAddingDialog->setWindowTitle(QCoreApplication::translate("ListAddingDialog", "BillSplittr", nullptr));
         list_label->setText(QCoreApplication::translate("ListAddingDialog", "List", nullptr));
         listNameInput_label->setText(QString());
         priceInput->setText(QString());

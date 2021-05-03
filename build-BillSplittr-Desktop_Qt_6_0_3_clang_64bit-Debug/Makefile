@@ -52,17 +52,21 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../BillSplittr/list.cpp \
+SOURCES       = ../BillSplittr/createbilldialog.cpp \
+		../BillSplittr/list.cpp \
 		../BillSplittr/listaddingdialog.cpp \
 		../BillSplittr/main.cpp \
 		../BillSplittr/mainwindow.cpp \
-		../BillSplittr/payer.cpp moc_listaddingdialog.cpp \
+		../BillSplittr/payer.cpp moc_createbilldialog.cpp \
+		moc_listaddingdialog.cpp \
 		moc_mainwindow.cpp
-OBJECTS       = list.o \
+OBJECTS       = createbilldialog.o \
+		list.o \
 		listaddingdialog.o \
 		main.o \
 		mainwindow.o \
 		payer.o \
+		moc_createbilldialog.o \
 		moc_listaddingdialog.o \
 		moc_mainwindow.o
 DIST          = /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/spec_pre.prf \
@@ -177,10 +181,12 @@ DIST          = /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/exceptions.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/yacc.prf \
 		/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/lex.prf \
-		../BillSplittr/BillSplittr.pro ../BillSplittr/list.h \
+		../BillSplittr/BillSplittr.pro ../BillSplittr/createbilldialog.h \
+		../BillSplittr/list.h \
 		../BillSplittr/listaddingdialog.h \
 		../BillSplittr/mainwindow.h \
-		../BillSplittr/payer.h ../BillSplittr/list.cpp \
+		../BillSplittr/payer.h ../BillSplittr/createbilldialog.cpp \
+		../BillSplittr/list.cpp \
 		../BillSplittr/listaddingdialog.cpp \
 		../BillSplittr/main.cpp \
 		../BillSplittr/mainwindow.cpp \
@@ -204,7 +210,7 @@ include /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-BillSplittr.app/Contents/MacOS/BillSplittr: ui_listaddingdialog.h ui_mainwindow.h $(OBJECTS)  
+BillSplittr.app/Contents/MacOS/BillSplittr: ui_createbilldialog.h ui_listaddingdialog.h ui_mainwindow.h $(OBJECTS)  
 	@test -d BillSplittr.app/Contents/MacOS/ || mkdir -p BillSplittr.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -471,9 +477,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../BillSplittr/list.h ../BillSplittr/listaddingdialog.h ../BillSplittr/mainwindow.h ../BillSplittr/payer.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../BillSplittr/list.cpp ../BillSplittr/listaddingdialog.cpp ../BillSplittr/main.cpp ../BillSplittr/mainwindow.cpp ../BillSplittr/payer.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../BillSplittr/listaddingdialog.ui ../BillSplittr/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../BillSplittr/createbilldialog.h ../BillSplittr/list.h ../BillSplittr/listaddingdialog.h ../BillSplittr/mainwindow.h ../BillSplittr/payer.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../BillSplittr/createbilldialog.cpp ../BillSplittr/list.cpp ../BillSplittr/listaddingdialog.cpp ../BillSplittr/main.cpp ../BillSplittr/mainwindow.cpp ../BillSplittr/payer.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../BillSplittr/createbilldialog.ui ../BillSplittr/listaddingdialog.ui ../BillSplittr/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -508,9 +514,16 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/data/dummy.cpp
 	/Library/Developer/CommandLineTools/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -Wall -Wextra -dM -E -o moc_predefs.h /Users/neneprm/Qt/6.0.3/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_listaddingdialog.cpp moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_createbilldialog.cpp moc_listaddingdialog.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_listaddingdialog.cpp moc_mainwindow.cpp
+	-$(DEL_FILE) moc_createbilldialog.cpp moc_listaddingdialog.cpp moc_mainwindow.cpp
+moc_createbilldialog.cpp: ../BillSplittr/createbilldialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		moc_predefs.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/bin/moc
+	/Users/neneprm/Qt/6.0.3/clang_64/bin/moc $(DEFINES) --include /Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/build-BillSplittr-Desktop_Qt_6_0_3_clang_64bit-Debug/moc_predefs.h -I/Users/neneprm/Qt/6.0.3/clang_64/mkspecs/macx-clang -I/Users/neneprm/Desktop/C++/BillSplittr/BillSplittr/BillSplittr -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtGui.framework/Headers -I/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/neneprm/Qt/6.0.3/clang_64/lib ../BillSplittr/createbilldialog.h -o moc_createbilldialog.cpp
+
 moc_listaddingdialog.cpp: ../BillSplittr/listaddingdialog.h \
 		../BillSplittr/payer.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/QString \
@@ -542,6 +555,7 @@ moc_mainwindow.cpp: ../BillSplittr/mainwindow.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../BillSplittr/createbilldialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		moc_predefs.h \
@@ -552,9 +566,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_listaddingdialog.h ui_mainwindow.h
+compiler_uic_make_all: ui_createbilldialog.h ui_listaddingdialog.h ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_listaddingdialog.h ui_mainwindow.h
+	-$(DEL_FILE) ui_createbilldialog.h ui_listaddingdialog.h ui_mainwindow.h
+ui_createbilldialog.h: ../BillSplittr/createbilldialog.ui \
+		/Users/neneprm/Qt/6.0.3/clang_64/bin/uic
+	/Users/neneprm/Qt/6.0.3/clang_64/bin/uic ../BillSplittr/createbilldialog.ui -o ui_createbilldialog.h
+
 ui_listaddingdialog.h: ../BillSplittr/listaddingdialog.ui \
 		/Users/neneprm/Qt/6.0.3/clang_64/bin/uic
 	/Users/neneprm/Qt/6.0.3/clang_64/bin/uic ../BillSplittr/listaddingdialog.ui -o ui_listaddingdialog.h
@@ -574,6 +592,12 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+createbilldialog.o: ../BillSplittr/createbilldialog.cpp ../BillSplittr/createbilldialog.h \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_createbilldialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o createbilldialog.o ../BillSplittr/createbilldialog.cpp
 
 list.o: ../BillSplittr/list.cpp ../BillSplittr/list.h \
 		../BillSplittr/payer.h \
@@ -615,6 +639,7 @@ main.o: ../BillSplittr/main.cpp ../BillSplittr/mainwindow.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../BillSplittr/createbilldialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QApplication \
@@ -635,6 +660,7 @@ mainwindow.o: ../BillSplittr/mainwindow.cpp ../BillSplittr/mainwindow.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../BillSplittr/createbilldialog.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		ui_mainwindow.h \
@@ -648,6 +674,9 @@ payer.o: ../BillSplittr/payer.cpp ../BillSplittr/payer.h \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/QLabel \
 		/Users/neneprm/Qt/6.0.3/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o payer.o ../BillSplittr/payer.cpp
+
+moc_createbilldialog.o: moc_createbilldialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_createbilldialog.o moc_createbilldialog.cpp
 
 moc_listaddingdialog.o: moc_listaddingdialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_listaddingdialog.o moc_listaddingdialog.cpp
