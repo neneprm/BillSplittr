@@ -90,6 +90,9 @@ public:
         numPeople_label = new QLabel(centralwidget);
         numPeople_label->setObjectName(QString::fromUtf8("numPeople_label"));
         numPeople_label->setMaximumSize(QSize(16777215, 30));
+        numPeople_label->setStyleSheet(QString::fromUtf8("font: 18px;\n"
+"font: bold;\n"
+"color: #0f4c75;"));
         numPeople_label->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(numPeople_label);
@@ -115,6 +118,9 @@ public:
         total_label = new QLabel(centralwidget);
         total_label->setObjectName(QString::fromUtf8("total_label"));
         total_label->setMaximumSize(QSize(16777215, 30));
+        total_label->setStyleSheet(QString::fromUtf8("font: 18px;\n"
+"font: bold;\n"
+"color: #0f4c75;"));
         total_label->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(total_label);
@@ -408,7 +414,7 @@ public:
         QObject::connect(nameInput, &QLineEdit::returnPressed, nameAdd_button, qOverload<>(&QPushButton::animateClick));
         QObject::connect(listInput, &QLineEdit::returnPressed, listAdd_button, qOverload<>(&QPushButton::animateClick));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

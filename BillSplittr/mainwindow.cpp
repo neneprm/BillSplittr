@@ -9,8 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     payerGridLayout = new QGridLayout(ui->name_scrollAreaWidgetContents);
     listGridLayout = new QGridLayout(ui->list_scrollAreaWidgetContents);
-
-//    addItemtoList(list);
 }
 
 MainWindow::~MainWindow()
@@ -98,7 +96,18 @@ void MainWindow::on_clearAllList_button_clicked()
     ui->totalPrice->setText("0");
     itemList.clear();
     clearLayout(listGridLayout);
-    for(int i{0};i<payerList.size();i++){
+
+    for(int i{0}; i < payerList.size(); i++)
+    {
         payerList.at(i)->resetPrice();
     }
+}
+
+void MainWindow::on_createBill_button_clicked()
+{
+    createBillDialog = new CreateBillDialog();
+    createBillDialog->setBill(payerList,itemList);
+    createBillDialog->show();
+
+    this->close();
 }

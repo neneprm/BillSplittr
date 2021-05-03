@@ -4,6 +4,7 @@
 #include "payer.h"
 #include "list.h"
 #include "listaddingdialog.h"
+#include "createbilldialog.h"
 
 #include <QMainWindow>
 #include <QLabel>
@@ -28,13 +29,14 @@ private slots:
     void on_nameAdd_button_clicked();
     void on_listAdd_button_clicked();
     void on_clearAllName_button_clicked();
-
     void on_clearAllList_button_clicked();
+    void on_createBill_button_clicked();
 
 private:
     Ui::MainWindow *ui;
 
     ListAddingDialog *listAddingDialog;
+    CreateBillDialog *createBillDialog;
     QLabel *listNameInput_label;
     QGridLayout *payerGridLayout;
     QGridLayout *listGridLayout;
