@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -37,6 +38,7 @@ void MainWindow::clearLayout(QLayout *layout)
 void MainWindow::addItemtoList(List *list)
 {
     itemList.push_back(list);
+
     //Add widget
     listGridLayout->addWidget(list->listLabel,0,0, Qt::AlignLeft);
     listGridLayout->addWidget(list->priceLabel,0,1, Qt::AlignRight);
@@ -50,7 +52,6 @@ void MainWindow::on_nameAdd_button_clicked()
        Payer *payer = new Payer(ui->nameInput->text());
        ui->nameInput->clear();
        payerList.push_back(payer);
-       //qDebug() << "Add payer to vector";
 
        //Add payer Label
        payerGridLayout->addWidget(payer->nameLabel,numPayer,0,Qt::AlignLeft);
@@ -105,9 +106,12 @@ void MainWindow::on_clearAllList_button_clicked()
 
 void MainWindow::on_createBill_button_clicked()
 {
-    createBillDialog = new CreateBillDialog();
-    createBillDialog->setBill(payerList,itemList);
-    createBillDialog->show();
+    if(itemList.size() != 0 && payerList.size() != 0)
+    {
+        createBillDialog = new CreateBillDialog();
+        createBillDialog->setBill(payerList,itemList);
+        createBillDialog->show();
 
-    this->close();
+        this->close();
+    }
 }

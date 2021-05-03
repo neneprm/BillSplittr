@@ -2,6 +2,7 @@
 #define LIST_H
 
 #include "payer.h"
+
 #include <QString>
 
 class List

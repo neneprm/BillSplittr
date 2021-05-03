@@ -3,6 +3,7 @@
 
 #include "payer.h"
 #include "list.h"
+
 #include <QDialog>
 #include <QVector>
 #include <QGridLayout>

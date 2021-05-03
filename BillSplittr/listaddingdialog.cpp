@@ -1,5 +1,6 @@
 #include "listaddingdialog.h"
 #include "ui_listaddingdialog.h"
+
 #include <QDebug>
 
 ListAddingDialog::ListAddingDialog(QWidget *parent, QString listName) :
