@@ -25,3 +25,8 @@ void List::setNewPerPerson(int newPerPerson)
     this->perPerson = newPerPerson;
     this->perPersonLabel->setText(QString::number(newPerPerson));
 }
+
+int List::getPrice() const
+{
+    return price;
+}
