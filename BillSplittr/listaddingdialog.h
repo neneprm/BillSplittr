@@ -24,8 +24,8 @@ public:
 
     int getPriceVal();
     void setPayerList(QVector<Payer*> list);
-    void setItem(List* item);
-    void setTotal(QLabel* total);
+    void setItem(List *item);
+    void setTotal(QLabel *total);
 
 private slots:
     void numButton_clicked();

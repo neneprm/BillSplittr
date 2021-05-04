@@ -21,7 +21,7 @@ public:
 
     void setNewPrice(int newPrice);
     void setNewPerPerson(int newPerPerson);
-    int getPrice()const;
+    int getPrice() const;
 };
 
 #endif // LIST_H
