@@ -1,9 +1,8 @@
 ﻿#ifndef LIST_H
 #define LIST_H
 
-#include "payer.h"
-
 #include <QString>
+#include <QLabel>
 
 class List
 {
