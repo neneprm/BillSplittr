@@ -1,8 +1,6 @@
 #include "listaddingdialog.h"
 #include "ui_listaddingdialog.h"
 
-#include <QDebug>
-
 ListAddingDialog::ListAddingDialog(QWidget *parent, QString listName) :
     QDialog(parent),
     ui(new Ui::ListAddingDialog)
@@ -75,11 +73,13 @@ void ListAddingDialog::setPayerList(QVector<Payer *> list)
     setNameList();
 }
 
+// Set list pointer
 void ListAddingDialog::setItem(List *item)
 {
     this->itemPtr = item;
 }
 
+// Set total pointer
 void ListAddingDialog::setTotal(QLabel *total)
 {
     this->total = total;
